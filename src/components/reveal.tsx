@@ -39,7 +39,7 @@ export function Reveal({ children, className = "", delayMs = 0 }: RevealProps) {
     <div
       ref={ref}
       style={{
-        transitionDelay: `${delayMs}ms`,
+        animationDelay: `${delayMs}ms`,
       }}
       className={`reveal-on-scroll ${isVisible ? "is-revealed" : ""} ${className}`}
     >
