@@ -53,7 +53,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Project Title */}
-        <h3 className="font-[var(--font-heading)] text-lg sm:text-xl font-bold uppercase tracking-tight text-white mb-3 group-hover:text-[var(--accent)] transition-colors flex items-center justify-between">
+        <h3 className="font-[var(--font-heading)] text-lg sm:text-xl font-bold uppercase tracking-tight text-[var(--fg)] mb-3 group-hover:text-[var(--accent)] transition-colors flex items-center justify-between">
           <span>{project.title}</span>
           <ArrowUpRight
             size={18}
@@ -98,7 +98,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-[var(--font-functional)] font-semibold text-[var(--accent)] hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-[var(--font-functional)] font-semibold text-[var(--accent)] hover:text-[var(--fg)] transition-colors"
           >
             <GithubIcon size={13} />
             <span>INSPECT SOURCE REPOSITORY</span>

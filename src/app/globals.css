@@ -2,37 +2,40 @@
 
 /*
  * Design tokens
- * Values are taken from blackbox.ai production CSS (--bx-* custom properties),
- * extracted 2026-10-22. Dark is the default scheme; light values mirror their
- * light-mode counterparts. Theme switching (system/light/dark) is wired in a
- * later milestone via the `data-theme` attribute on <html>.
+ * Extracted from Blackbox.ai production CSS with full Light / Dark / System support.
+ * Dark is default; Light mode delivers a pristine high-contrast technical paper aesthetic.
  */
-:root {
+:root,
+:root[data-theme="dark"] {
   color-scheme: dark;
 
   /* Surfaces */
-  --bg: light-dark(#f7f7f4, #080808);
-  --bg-alt: light-dark(#f2f2ef, #0a0a0a);
-  --surface: light-dark(#ededea, #0c0c0c);
-  --surface-raised: light-dark(#d6d6d1, #181818);
+  --bg: #080808;
+  --bg-alt: #0a0a0a;
+  --surface: #0c0c0c;
+  --surface-raised: #181818;
 
   /* Text */
-  --fg: light-dark(#0f0f0e, #ffffff);
-  --ink: light-dark(#0f0f0e, #f2f2f0);
-  --prose: light-dark(#2b2b29, #c6c6c2);
-  --code: light-dark(#3a3a38, #cfcfcb);
-  --muted: light-dark(#6b6b68, #82827f);
-  --muted-soft: light-dark(#8a8a86, #4a4a49);
+  --fg: #ffffff;
+  --ink: #f2f2f0;
+  --prose: #c6c6c2;
+  --code: #cfcfcb;
+  --muted: #82827f;
+  --muted-soft: #4a4a49;
 
-  /* Lines */
-  --line: light-dark(#deded9, #1a1a1a);
-  --rail: color-mix(in srgb, var(--fg) 11.7%, transparent);
-  --rail-mark: color-mix(in srgb, var(--fg) 34%, transparent);
+  /* Lines & Rails */
+  --line: #1a1a1a;
+  --rail: rgba(255, 255, 255, 0.12);
+  --rail-mark: rgba(255, 255, 255, 0.28);
 
   /* Accent */
   --accent: #ff6901;
-  --accent-text: light-dark(#b84a00, #ff6901);
+  --accent-text: #ff6901;
   --on-accent: #0c0c0c;
+
+  /* Header & Cards */
+  --nav-bg: rgba(8, 8, 8, 0.85);
+  --nav-card: rgba(12, 12, 12, 0.95);
 
   /* Layout */
   --frame: 1536px;
@@ -42,10 +45,63 @@
 
 :root[data-theme="light"] {
   color-scheme: light;
+
+  /* Surfaces */
+  --bg: #f8f8f6;
+  --bg-alt: #f0f0ec;
+  --surface: #ffffff;
+  --surface-raised: #e9e9e4;
+
+  /* Text */
+  --fg: #0a0a0a;
+  --ink: #111110;
+  --prose: #2e2e2a;
+  --code: #20201d;
+  --muted: #666662;
+  --muted-soft: #9c9c96;
+
+  /* Lines & Rails */
+  --line: #e2e2dc;
+  --rail: rgba(0, 0, 0, 0.08);
+  --rail-mark: rgba(0, 0, 0, 0.22);
+
+  /* Accent */
+  --accent: #ff6901;
+  --accent-text: #e05800;
+  --on-accent: #ffffff;
+
+  /* Header & Cards */
+  --nav-bg: rgba(248, 248, 246, 0.88);
+  --nav-card: rgba(255, 255, 255, 0.98);
+
+  /* Layout */
+  --frame: 1536px;
+  --gutter: max(clamp(1.375rem, 4.375vw, 3.5rem), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  --header-h: calc(65px + env(safe-area-inset-top, 0px));
 }
 
-:root[data-theme="system"] {
-  color-scheme: light dark;
+@media (prefers-color-scheme: light) {
+  :root[data-theme="system"] {
+    color-scheme: light;
+    --bg: #f8f8f6;
+    --bg-alt: #f0f0ec;
+    --surface: #ffffff;
+    --surface-raised: #e9e9e4;
+    --fg: #0a0a0a;
+    --ink: #111110;
+    --prose: #2e2e2a;
+    --code: #20201d;
+    --muted: #666662;
+    --muted-soft: #9c9c96;
+    --line: #e2e2dc;
+    --rail: rgba(0, 0, 0, 0.08);
+    --rail-mark: rgba(0, 0, 0, 0.22);
+    --accent: #ff6901;
+    --accent-text: #e05800;
+    --on-accent: #ffffff;
+    --nav-bg: rgba(248, 248, 246, 0.88);
+    --nav-card: rgba(255, 255, 255, 0.98);
+  }
 }
 
 @theme inline {
@@ -91,12 +147,14 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 body {
   font-family: var(--font-reading);
   background-color: var(--bg);
   color: var(--ink);
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 ::selection {

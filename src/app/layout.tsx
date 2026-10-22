@@ -36,8 +36,31 @@ export default function RootLayout({
     <html
       lang="id"
       data-theme="dark"
+      suppressHydrationWarning
       className={`${hostGrotesk.variable} ${archivo.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var theme = stored || 'dark';
+                  if (theme === 'system') {
+                    document.documentElement.setAttribute('data-theme', 'system');
+                    document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
+                  } else {
+                    document.documentElement.setAttribute('data-theme', theme);
+                    document.documentElement.style.colorScheme = theme;
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--ink)] font-[var(--font-reading)]">
         {children}
       </body>

@@ -14,8 +14,8 @@ export function Experience() {
         </div>
 
         {/* Section Headline */}
-        <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight mb-4 max-w-4xl">
-          PRACTICAL FIELD EXPERIENCE & ACADEMIC RIGOR.
+        <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--fg)] leading-tight mb-4 max-w-4xl">
+          PRACTICAL FIELD EXPERIENCE &amp; ACADEMIC RIGOR.
         </h2>
         <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] max-w-3xl mb-12">
           Kombinasi pengalaman lapangan menangani infrastruktur fisik secara nyata dan pendidikan formal rekayasa komputasi.
@@ -37,7 +37,7 @@ export function Experience() {
                       {isWork ? <Briefcase size={18} /> : <GraduationCap size={18} />}
                     </div>
                     <div>
-                      <h3 className="font-[var(--font-heading)] text-lg sm:text-xl font-bold text-white uppercase tracking-tight">
+                      <h3 className="font-[var(--font-heading)] text-lg sm:text-xl font-bold text-[var(--fg)] uppercase tracking-tight">
                         {item.role}
                       </h3>
                       <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-[var(--font-functional)] text-[var(--muted)] mt-0.5">
