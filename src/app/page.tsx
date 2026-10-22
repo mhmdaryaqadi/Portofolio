@@ -2,6 +2,8 @@ import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Skills } from "@/components/skills";
+import { Flagship } from "@/components/flagship";
+import { Projects } from "@/components/projects";
 import { Experience } from "@/components/experience";
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
+        <Flagship />
+        <Projects />
         <Experience />
       </main>
     </div>
