@@ -29,11 +29,11 @@ function subscribeTheme(callback: () => void) {
 }
 
 function getThemeSnapshot(): ThemeMode {
-  return (localStorage.getItem("theme") as ThemeMode) || "dark";
+  return (localStorage.getItem("theme") as ThemeMode) || "light";
 }
 
 function getServerSnapshot(): ThemeMode {
-  return "dark";
+  return "light";
 }
 
 export function ThemeToggle({ className = "" }: { className?: string }) {

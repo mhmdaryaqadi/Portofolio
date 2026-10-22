@@ -4,6 +4,7 @@ import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
 import { CodeTerminal } from "@/components/code-terminal";
 import { CountUp } from "@/components/count-up";
+import { BracketButton } from "@/components/bracket-button";
 
 export function Hero() {
   return (
@@ -60,30 +61,33 @@ export function Hero() {
                 Saya <strong className="text-[var(--fg)] font-semibold">{profileData.name}</strong> — menjembatani fondasi infrastruktur jaringan fisik &amp; hardware (TKJ + PTIK) dengan arsitektur software modern: dari desktop engine hybrid (GameZone v3.1.2) ber-IPC instan hingga aplikasi web fullstack berskala produksi.
               </p>
 
-              {/* CTA Button Row */}
-              <div className="flex flex-wrap items-center gap-3.5 mb-8">
-                <a
+              {/* CTA Button Row with Blackbox Signature Bracket Buttons & Scramble Effects */}
+              <div className="flex flex-wrap items-center gap-4 mb-8">
+                <BracketButton
                   href="#projects"
-                  className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 bg-[var(--fg)] text-[var(--bg)] font-[var(--font-heading)] text-xs sm:text-sm font-black uppercase tracking-wider rounded-xs hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 shadow-sm"
+                  variant="primary"
+                  size="md"
+                  icon={<ArrowUpRight size={15} className="stroke-[2.5]" />}
                 >
-                  <span>EXPLORE PROJECTS</span>
-                  <ArrowUpRight size={16} className="stroke-[2.5]" />
-                </a>
+                  EXPLORE PROJECTS
+                </BracketButton>
 
-                <a
+                <BracketButton
                   href="#flagship"
-                  className="inline-flex items-center gap-2 px-5 sm:px-6 py-3.5 bg-[var(--surface)] text-[var(--fg)] border border-[var(--line)] font-[var(--font-heading)] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-[var(--surface-raised)] hover:border-[var(--accent)] hover:-translate-y-0.5 transition-all duration-150"
+                  variant="secondary"
+                  size="md"
+                  icon={<Terminal size={15} className="text-[var(--accent)]" />}
                 >
-                  <Terminal size={16} className="text-[var(--accent)]" />
-                  <span>FLAGSHIP: GAMEZONE</span>
-                </a>
+                  FLAGSHIP: GAMEZONE
+                </BracketButton>
 
-                <a
+                <BracketButton
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-4 py-3.5 text-[var(--muted)] hover:text-[var(--fg)] font-[var(--font-functional)] text-xs uppercase tracking-wider transition-colors"
+                  variant="ghost"
+                  size="md"
                 >
-                  <span>GET IN TOUCH</span>
-                </a>
+                  GET IN TOUCH
+                </BracketButton>
               </div>
 
               {/* Social Links Row */}

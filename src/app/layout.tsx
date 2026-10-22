@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      data-theme="dark"
+      data-theme="light"
       suppressHydrationWarning
       className={`${hostGrotesk.variable} ${archivo.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
@@ -47,7 +47,7 @@ export default function RootLayout({
                 try {
                   var stored = localStorage.getItem('theme');
                   var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var theme = stored || 'dark';
+                  var theme = stored || 'light';
                   if (theme === 'system') {
                     document.documentElement.setAttribute('data-theme', 'system');
                     document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light';
@@ -61,8 +61,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[var(--bg)] text-[var(--ink)] font-[var(--font-reading)]">
-        {children}
+      <body className="min-h-full technical-rails-bg font-[var(--font-reading)]">
+        {/* Centered Technical Frame with Blackbox Lateral Rails */}
+        <div className="max-w-[1536px] mx-auto min-h-screen bg-[var(--bg)] border-x border-[var(--line)] shadow-[0_0_80px_rgba(0,0,0,0.06)] relative flex flex-col">
+          {children}
+        </div>
       </body>
     </html>
   );

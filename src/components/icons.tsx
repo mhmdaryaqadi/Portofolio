@@ -31,3 +31,19 @@ export function LinkedinIcon({ className = "w-4 h-4", size }: { className?: stri
     </svg>
   );
 }
+
+export function WhatsappIcon({ className = "w-4 h-4", size }: { className?: string; size?: number }) {
+  return (
+    <svg
+      role="img"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      width={size || 16}
+      height={size || 16}
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M12.031 0C5.397 0 .019 5.378.019 12.012c0 2.118.552 4.187 1.603 6.009L0 24l6.167-1.618a11.97 11.97 0 005.864 1.526h.005c6.632 0 12.01-5.38 12.01-12.013C24.046 5.378 18.665 0 12.031 0zm0 21.99a9.96 9.96 0 01-5.078-1.39l-.364-.216-3.771.989 1.006-3.676-.237-.377a9.96 9.96 0 01-1.53-5.314c0-5.508 4.482-9.988 9.99-9.988 2.668 0 5.176 1.039 7.062 2.925a9.927 9.927 0 012.92 7.059c0 5.51-4.483 9.992-9.998 9.992z" />
+    </svg>
+  );
+}
