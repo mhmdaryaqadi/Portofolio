@@ -1,5 +1,8 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
+import { About } from "@/components/about";
+import { Skills } from "@/components/skills";
+import { Experience } from "@/components/experience";
 
 export default function Home() {
   return (
@@ -10,6 +13,9 @@ export default function Home() {
       {/* Main Content Area */}
       <main className="flex-1">
         <Hero />
+        <About />
+        <Skills />
+        <Experience />
       </main>
     </div>
   );
