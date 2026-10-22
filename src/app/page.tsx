@@ -5,6 +5,8 @@ import { Skills } from "@/components/skills";
 import { Flagship } from "@/components/flagship";
 import { Projects } from "@/components/projects";
 import { Experience } from "@/components/experience";
+import { Contact } from "@/components/contact";
+import { Footer } from "@/components/footer";
 
 export default function Home() {
   return (
@@ -20,7 +22,11 @@ export default function Home() {
         <Flagship />
         <Projects />
         <Experience />
+        <Contact />
       </main>
+
+      {/* Modern Minimalist Footer */}
+      <Footer />
     </div>
   );
 }
