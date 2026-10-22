@@ -145,7 +145,7 @@ export function Navbar() {
                 size="sm"
                 icon={<ArrowUpRight size={13} className="stroke-[2.5]" />}
               >
-                CONTACT ME
+                HUBUNGI SAYA
               </BracketButton>
             </div>
 

@@ -11,16 +11,16 @@ export function Experience() {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--surface)] border border-[var(--line)] rounded-[2px] mb-6">
             <span className="w-2 h-2 bg-[var(--accent)] rounded-[1px] shadow-[0_0_8px_rgba(255,105,1,0.6)]" />
             <span className="font-[var(--font-functional)] text-xs font-semibold tracking-[0.14em] text-[var(--muted)] uppercase">
-              EXPERIENCE &amp; EDUCATION
+              RIWAYAT PENDIDIKAN &amp; PENGALAMAN KERJA
             </span>
           </div>
 
           {/* Section Headline */}
           <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--fg)] leading-tight mb-4 max-w-4xl">
-            PRACTICAL FIELD EXPERIENCE &amp; ACADEMIC RIGOR.
+            PENDIDIKAN AKADEMIK &amp; PENGALAMAN LAPANGAN.
           </h2>
           <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] max-w-3xl mb-12">
-            Kombinasi pengalaman lapangan menangani infrastruktur fisik secara nyata dan pendidikan formal rekayasa komputasi.
+            Rekam jejak studi formal di bidang keilmuan informatika serta pengalaman praktik kerja langsung dalam instalasi dan pemeliharaan infrastruktur jaringan.
           </p>
         </Reveal>
 

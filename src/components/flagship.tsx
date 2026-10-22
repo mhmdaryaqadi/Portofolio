@@ -39,7 +39,7 @@ export function Flagship() {
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-[var(--surface)] border border-[var(--line)] rounded-[2px] mb-6 overflow-hidden relative">
             <span className="w-2 h-2 bg-[var(--accent)] rounded-[1px] shadow-[0_0_8px_rgba(255,105,1,0.8)] animate-pulse" />
             <span className="font-[var(--font-functional)] text-xs font-semibold tracking-[0.14em] text-[var(--accent)] uppercase">
-              FLAGSHIP SYSTEM ARCHITECTURE
+              ARSITEKTUR PERANGKAT LUNAK UTAMA
             </span>
             <div className="w-12 h-2 animate-hazard-crawl opacity-40 ml-1 rounded-xs" />
           </div>
@@ -51,7 +51,7 @@ export function Flagship() {
                 GAMEZONE PLATFORM &amp; IPC ENGINE.
               </h2>
               <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] max-w-2xl mt-3">
-                Solusi desktop hybrid mandiri berkinerja tinggi yang menggabungkan native Python core dengan web runtime, SQLite WAL, dan automated release toolchain.
+                Aplikasi desktop hybrid mandiri yang memadukan logika native Python, komponen Microsoft Edge WebView2, basis data lokal SQLite WAL, dan pipeline distribusi otomatis.
               </p>
             </div>
 
@@ -66,7 +66,7 @@ export function Flagship() {
                 size="sm"
                 icon={<ExternalLink size={12} className="text-[var(--accent)]" />}
               >
-                RELEASES
+                ARSIP RILIS
               </BracketButton>
             </div>
           </div>
@@ -87,7 +87,7 @@ export function Flagship() {
                   </div>
                   <div>
                     <span className="font-[var(--font-functional)] text-[11px] text-[var(--muted)] tracking-wider uppercase block">
-                      ARCHITECTURE DOMAIN
+                      DOMAIN ARSITEKTUR
                     </span>
                     <span className="font-[var(--font-heading)] text-sm sm:text-base font-bold text-[var(--fg)] uppercase tracking-tight">
                       Hybrid Python 3 + WebView2 Subsystem
@@ -97,7 +97,7 @@ export function Flagship() {
 
                 <div className="flex items-center gap-2 font-[var(--font-functional)] text-xs text-[var(--muted)]">
                   <Radio size={14} className="text-[var(--accent)] animate-pulse" />
-                  <span className="text-[var(--accent)] font-semibold">LIVE PIPELINE: ACTIVE</span>
+                  <span className="text-[var(--accent)] font-semibold">STATUS SUBSISTEM: AKTIF</span>
                 </div>
               </div>
 
@@ -106,13 +106,13 @@ export function Flagship() {
                 {/* Left: Deep Technical Description & Problem Solved */}
                 <div className="lg:col-span-6 space-y-5">
                   <h3 className="font-[var(--font-heading)] text-xl sm:text-2xl font-bold uppercase tracking-tight text-[var(--fg)]">
-                    Low Latency Desktop-to-OS IPC Bridge
+                    Komunikasi Antar-Proses (IPC) Asinkron Berlatensi Rendah
                   </h3>
                   <p className="font-[var(--font-reading)] text-sm sm:text-base text-[var(--prose)] leading-relaxed">
-                    Tantangan utama pada platform desktop modern adalah memadukan fleksibilitas visual berbasis web dengan kontrol sistem operasi tingkat rendah tanpa membebani memori seperti Electron tradisional.
+                    Salah satu pertimbangan dalam pengembangan aplikasi desktop hybrid adalah menjaga efisiensi penggunaan memori sistem tanpa mengorbankan fleksibilitas antarmuka pengguna berbasis standar web.
                   </p>
                   <p className="font-[var(--font-reading)] text-sm sm:text-base text-[var(--muted)] leading-relaxed">
-                    GameZone memecahkan masalah ini dengan merancang bridge IPC dua arah berukuran <strong>112 KB (<code className="text-[var(--fg)] font-mono">api.py</code>)</strong> yang menghubungkan antarmuka grafis langsung ke thread native Python. Seluruh panggilan API dieksekusi secara asinkron dengan persistensi data lokal berbasis <strong>SQLite WAL (Write-Ahead Logging)</strong>.
+                    GameZone mengimplementasikan modul jembatan IPC dua arah berukuran <strong>112 KB (<code className="text-[var(--fg)] font-mono">api.py</code>)</strong> yang menghubungkan antarmuka grafis langsung ke thread native Python. Seluruh pemanggilan fungsi dieksekusi secara asinkron dengan persistensi data lokal menggunakan <strong>SQLite Write-Ahead Logging (WAL)</strong>.
                   </p>
 
                   {/* Architectural Highlights */}
@@ -123,10 +123,10 @@ export function Flagship() {
                       </div>
                       <div>
                         <span className="font-[var(--font-heading)] text-xs font-bold text-[var(--fg)] uppercase tracking-wide block">
-                          Bi-directional IPC Protocol
+                          Protokol Komunikasi IPC Dua Arah
                         </span>
                         <span className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
-                          Komunikasi zero-overhead antara JavaScript UI dan Python runtime via window.pywebview.api tanpa server HTTP perantara.
+                          Transmisi data asinkron antara antarmuka JavaScript dan runtime Python melalui window.pywebview.api tanpa memerlukan server HTTP lokal.
                         </span>
                       </div>
                     </div>
@@ -140,7 +140,7 @@ export function Flagship() {
                           SQLite Write-Ahead Logging (WAL)
                         </span>
                         <span className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
-                          Mekanisme konkurensi database lokal yang memungkinkan pembacaan multi-thread tanpa mengunci transaksi penulisan data.
+                          Konfigurasi konkurensi basis data lokal yang memfasilitasi operasi pembacaan multi-thread tanpa mengunci transaksi penulisan data.
                         </span>
                       </div>
                     </div>
@@ -151,10 +151,10 @@ export function Flagship() {
                       </div>
                       <div>
                         <span className="font-[var(--font-heading)] text-xs font-bold text-[var(--fg)] uppercase tracking-wide block">
-                          Automated Delta Packaging &amp; Hotfix
+                          Pengemasan &amp; Pembaruan Terstruktur
                         </span>
                         <span className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
-                          Pipeline rilis mandiri berbasis skrip build Inno Setup, kompilasi PyInstaller, dan sinkronisasi delta rilis via version.json.
+                          Pipeline pengemasan menggunakan PyInstaller dan skrip installer Inno Setup, didukung mekanisme pembaruan berkas hotfix berbasis version metadata.
                         </span>
                       </div>
                     </div>
@@ -165,10 +165,10 @@ export function Flagship() {
                       </div>
                       <div>
                         <span className="font-[var(--font-heading)] text-xs font-bold text-[var(--fg)] uppercase tracking-wide block">
-                          Multi-Service Session Handling
+                          Integrasi Sesi Multi-Layanan
                         </span>
                         <span className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
-                          Integrasi aman sesi Discord OAuth2, protokol IPC Steam Client lokal, dan verifikasi status lisensi game.
+                          Pengelolaan otentikasi sesi Discord OAuth2, protokol komunikasi Steam IPC lokal, dan validasi status game.
                         </span>
                       </div>
                     </div>
@@ -208,7 +208,7 @@ export function Flagship() {
                       <span>UI / Presentation Layer (Edge WebView2)</span>
                     </div>
                     <div className="text-[11px] text-[var(--muted)]">
-                      DOM Event Handlers • JS Async Dispatch • Zero Chromium Bloat
+                      Penanganan Event DOM • Pengiriman Pesan JS Asinkron • Runtime Ramping Edge WebView2
                     </div>
                   </div>
 
@@ -258,7 +258,7 @@ export function Flagship() {
                       <span>Native Core Bridge (api.py • 112 KB)</span>
                     </div>
                     <div className="text-[11px] text-[var(--muted)]">
-                      Win32 Process Worker • Async Task Queue • Thread Pool Dispatch
+                      Worker Proses Win32 • Antrean Tugas Asinkron • Penjadwalan Thread Pool
                     </div>
                   </div>
 
@@ -379,7 +379,7 @@ export function Flagship() {
                   <div className="mt-4 pt-3 border-t border-[var(--line)] flex flex-wrap items-center justify-between text-[11px] text-[var(--muted)] gap-2">
                     <div className="flex items-center gap-1.5">
                       <Activity size={12} className="text-[var(--accent)] animate-pulse" />
-                      <span>Telemetry: <strong className="text-[var(--fg)] font-mono">0ms IPC Latency</strong></span>
+                      <span>Diagnosa: <strong className="text-[var(--fg)] font-mono">&lt; 0.5 ms Latensi IPC</strong></span>
                     </div>
                     <span className="font-mono text-[var(--fg)] text-[10px] bg-[var(--surface-raised)] px-2 py-0.5 border border-[var(--line)] rounded-xs">
                       qa_runner.py (100% Pass)
@@ -392,7 +392,7 @@ export function Flagship() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-[var(--line)]">
                 <div className="bg-[var(--bg)] border border-[var(--line)] p-4 rounded-xs hover:border-[var(--accent)] transition-all">
                   <div className="font-[var(--font-functional)] text-[11px] text-[var(--muted)] uppercase tracking-wider mb-1">
-                    IPC Latency
+                    Latensi IPC
                   </div>
                   <div className="font-[var(--font-heading)] text-xl sm:text-2xl font-black text-[var(--fg)]">
                     &lt; 0.5 ms
@@ -401,7 +401,7 @@ export function Flagship() {
 
                 <div className="bg-[var(--bg)] border border-[var(--line)] p-4 rounded-xs hover:border-[var(--accent)] transition-all">
                   <div className="font-[var(--font-functional)] text-[11px] text-[var(--muted)] uppercase tracking-wider mb-1">
-                    Bridge Core Size
+                    Ukuran Modul IPC
                   </div>
                   <div className="font-[var(--font-heading)] text-xl sm:text-2xl font-black text-[var(--fg)]">
                     <CountUp target={112} suffix=" KB" />
@@ -410,7 +410,7 @@ export function Flagship() {
 
                 <div className="bg-[var(--bg)] border border-[var(--line)] p-4 rounded-xs hover:border-[var(--accent)] transition-all">
                   <div className="font-[var(--font-functional)] text-[11px] text-[var(--muted)] uppercase tracking-wider mb-1">
-                    QA Test Pass Rate
+                    Pengujian Fungsional
                   </div>
                   <div className="font-[var(--font-heading)] text-xl sm:text-2xl font-black text-[var(--fg)] text-emerald-400">
                     <CountUp target={100} suffix="%" />
@@ -419,10 +419,10 @@ export function Flagship() {
 
                 <div className="bg-[var(--bg)] border border-[var(--line)] p-4 rounded-xs hover:border-[var(--accent)] transition-all">
                   <div className="font-[var(--font-functional)] text-[11px] text-[var(--muted)] uppercase tracking-wider mb-1">
-                    Subsystems Synced
+                    Subsistem Terhubung
                   </div>
                   <div className="font-[var(--font-heading)] text-xl sm:text-2xl font-black text-[var(--fg)]">
-                    <CountUp target={3} suffix=" Nodes" />
+                    <CountUp target={3} suffix=" Modul" />
                   </div>
                 </div>
               </div>
@@ -430,7 +430,7 @@ export function Flagship() {
               {/* Tech Badges List */}
               <div className="mt-6 pt-5 border-t border-[rgba(255,255,255,0.04)] flex flex-wrap items-center gap-2">
                 <span className="font-[var(--font-functional)] text-xs text-[var(--muted)] mr-2">
-                  STACK TECH:
+                  KOMPONEN TEKNOLOGI:
                 </span>
                 {flagship.techStack.map((tech, idx) => (
                   <span

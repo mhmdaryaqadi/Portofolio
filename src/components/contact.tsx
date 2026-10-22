@@ -44,17 +44,17 @@ export function Contact() {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--surface)] border border-[var(--line)] rounded-[2px] mb-6">
             <span className="w-2 h-2 bg-[var(--accent)] rounded-[1px] shadow-[0_0_8px_rgba(255,105,1,0.6)]" />
             <span className="font-[var(--font-functional)] text-xs font-semibold tracking-[0.14em] text-[var(--accent)] uppercase">
-              DIRECT COMMUNICATIONS &amp; INQUIRY
+              KOMUNIKASI &amp; KORESPONDENSI RESMI
             </span>
           </div>
 
           {/* Section Headline */}
           <div className="max-w-3xl mb-12">
             <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--fg)] leading-tight">
-              LET&apos;S BUILD RESILIENT SYSTEMS TOGETHER.
+              KORESPONDENSI &amp; KOLABORASI TEKNIS.
             </h2>
             <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] mt-4 leading-relaxed">
-              Terbuka untuk diskusi teknis, kolaborasi pengembangan arsitektur perangkat lunak, freelance development, maupun kesempatan rekayasa software dan infrastruktur jaringan.
+              Terbuka untuk korespondensi formal, konsultasi teknis perancangan perangkat lunak, kerja sama riset rekayasa sistem, serta peluang karir profesional.
             </p>
           </div>
         </Reveal>
@@ -69,13 +69,13 @@ export function Contact() {
                   <Mail size={18} />
                 </div>
                 <div className="font-[var(--font-functional)] text-xs text-[var(--muted)] uppercase tracking-wider mb-1">
-                  DIRECT INBOX
+                  SUREL FORMAL
                 </div>
                 <div className="font-[var(--font-heading)] text-sm font-bold text-[var(--fg)] mb-2 break-all">
                   {profileData.email}
                 </div>
                 <p className="font-[var(--font-reading)] text-xs text-[var(--muted)] mb-5">
-                  Salin email atau kirim pesan langsung untuk korespondensi formal.
+                  Kanal resmi untuk pertukaran dokumen teknis, proposal proyek, dan korespondensi akademik.
                 </p>
               </div>
 
@@ -90,12 +90,12 @@ export function Contact() {
                 {copied ? (
                   <>
                     <Check size={14} />
-                    <span>EMAIL COPIED!</span>
+                    <span>ALAMAT SUREL TERSALIN</span>
                   </>
                 ) : (
                   <>
                     <Copy size={14} />
-                    <span>COPY EMAIL ADDRESS</span>
+                    <span>SALIN ALAMAT SUREL</span>
                   </>
                 )}
               </button>
@@ -115,18 +115,18 @@ export function Contact() {
                   <MessageSquare size={18} />
                 </div>
                 <div className="font-[var(--font-functional)] text-xs text-[var(--muted)] uppercase tracking-wider mb-1">
-                  INSTANT MESSAGING
+                  KOMUNIKASI CEPAT
                 </div>
                 <div className="font-[var(--font-heading)] text-sm font-bold text-[var(--fg)] mb-2">
-                  WhatsApp Direct
+                  Pesan WhatsApp
                 </div>
                 <p className="font-[var(--font-reading)] text-xs text-[var(--muted)] mb-5">
-                  Kanal komunikasi cepat untuk respon singkat dan koordinasi proyek.
+                  Kanal pesan instan untuk koordinasi cepat, konfirmasi pertemuan, dan diskusi operasional.
                 </p>
               </div>
 
               <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-[var(--fg)] pt-3 border-t border-[rgba(255,255,255,0.04)]">
-                <span>SEND WHATSAPP MESSAGE</span>
+                <span>HUBUNGI VIA WHATSAPP</span>
                 <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </a>
@@ -145,18 +145,18 @@ export function Contact() {
                   <LinkedinIcon size={18} />
                 </div>
                 <div className="font-[var(--font-functional)] text-xs text-[var(--muted)] uppercase tracking-wider mb-1">
-                  PROFESSIONAL NETWORK
+                  JEJARING PROFESIONAL
                 </div>
                 <div className="font-[var(--font-heading)] text-sm font-bold text-[var(--fg)] mb-2">
-                  LinkedIn Profile
+                  Profil LinkedIn
                 </div>
                 <p className="font-[var(--font-reading)] text-xs text-[var(--muted)] mb-5">
-                  Terhubung secara profesional dan pantau riwayat rekayasa terkini.
+                  Dokumentasi capaian profesional, riwayat sertifikasi, dan jejaring industri teknologi.
                 </p>
               </div>
 
               <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-[var(--fg)] pt-3 border-t border-[rgba(255,255,255,0.04)]">
-                <span>CONNECT ON LINKEDIN</span>
+                <span>KUNJUNGI PROFIL LINKEDIN</span>
                 <ExternalLink size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </a>
@@ -175,18 +175,18 @@ export function Contact() {
                   <GithubIcon size={18} />
                 </div>
                 <div className="font-[var(--font-functional)] text-xs text-[var(--muted)] uppercase tracking-wider mb-1">
-                  CODE ARCHIVES
+                  REPOSITORI KODE SUMBER
                 </div>
                 <div className="font-[var(--font-heading)] text-sm font-bold text-[var(--fg)] mb-2">
-                  GitHub Repositories
+                  Repositori GitHub
                 </div>
                 <p className="font-[var(--font-reading)] text-xs text-[var(--muted)] mb-5">
-                  Eksplorasi riwayat commit, arsitektur kode sumber, dan rilis mandiri.
+                  Akses publik ke seluruh repositori kode sumber, implementasi algoritma, dan catatan commit.
                 </p>
               </div>
 
               <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-[var(--fg)] pt-3 border-t border-[rgba(255,255,255,0.04)]">
-                <span>VIEW GITHUB PROFILE</span>
+                <span>BUKA PROFIL GITHUB</span>
                 <ExternalLink size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
             </a>
@@ -202,10 +202,10 @@ export function Contact() {
               </div>
               <div>
                 <div className="font-[var(--font-functional)] text-xs font-bold text-[var(--fg)] uppercase tracking-wider">
-                  CURRENT WORK STATUS
+                  STATUS KETERSEDIAAN KERJA
                 </div>
                 <div className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
-                  {profileData.status.label} • Siap berkontribusi secara on-site di Jabodetabek atau remote.
+                  {profileData.status.label} • Terbuka untuk kontribusi langsung (on-site) di wilayah Jabodetabek maupun kerja jarak jauh (remote).
                 </div>
               </div>
             </div>

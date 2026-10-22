@@ -68,21 +68,21 @@ export function Hero() {
               <div className="inline-flex items-center gap-2.5 px-3 py-1 bg-[var(--surface)] border border-[var(--line)] rounded-[2px] mb-6 overflow-hidden relative">
                 <span className="w-2 h-2 bg-[var(--accent)] rounded-[1px] shadow-[0_0_8px_rgba(255,105,1,0.8)] animate-pulse" />
                 <span className="font-[var(--font-functional)] text-xs font-semibold tracking-[0.14em] text-[var(--muted)] uppercase">
-                  FULLSTACK &amp; SYSTEMS ARCHITECTURE
+                  TEKNIK INFORMATIKA &amp; REKAYASA SISTEM
                 </span>
-                <span className="text-[var(--accent)] font-mono text-[10px] font-bold">{"// SYS_READY"}</span>
+                <span className="text-[var(--accent)] font-mono text-[10px] font-bold">{"// AKADEMIK & RISET"}</span>
               </div>
 
               {/* Huge Bold Headline (Archivo Typography) with Live Terminal Cursor */}
               <h1 className="font-[var(--font-heading)] text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-[var(--fg)] leading-[1.04] mb-6">
-                HIGH-PERFORMANCE HYBRID SYSTEMS.{" "}
-                <span className="text-[var(--prose)]">ENGINEERED FROM HARDWARE TO CLOUD.</span>
+                REKAYASA PERANGKAT LUNAK SISTEM.{" "}
+                <span className="text-[var(--prose)]">DARI ARSITEKTUR NATIVE HINGGA PLATFORM WEB.</span>
                 <span className="inline-block w-2.5 h-6 sm:w-3 sm:h-10 bg-[var(--accent)] ml-2 animate-terminal-blink align-middle" />
               </h1>
 
               {/* Narrative Subtitle */}
               <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] leading-relaxed mb-8 max-w-2xl">
-                Saya <strong className="text-[var(--fg)] font-semibold">{profileData.name}</strong> — menjembatani fondasi infrastruktur jaringan fisik &amp; hardware (TKJ + PTIK) dengan arsitektur software modern: dari desktop engine hybrid (GameZone v3.1.2) ber-IPC instan hingga aplikasi web fullstack berskala produksi.
+                Halo, saya <strong className="text-[var(--fg)] font-semibold">{profileData.name}</strong> — mahasiswa S1 Teknik Informatika di Universitas Pancasila dengan latar belakang vokasi Teknik Komputer dan Jaringan (TKJ). Berfokus pada pengembangan perangkat lunak berbasis sistem, arsitektur aplikasi desktop hybrid (GameZone v3.1.2), serta perancangan aplikasi web fullstack dan infrastruktur jaringan.
               </p>
 
               {/* CTA Button Row with Blackbox Signature Bracket Buttons & Scramble Effects */}
@@ -94,7 +94,7 @@ export function Hero() {
                   size="md"
                   icon={<ArrowUpRight size={15} className="stroke-[2.5]" />}
                 >
-                  EXPLORE PROJECTS
+                  KATALOG PROYEK
                 </BracketButton>
 
                 <BracketButton
@@ -104,7 +104,7 @@ export function Hero() {
                   size="md"
                   icon={<Terminal size={15} className="text-[var(--accent)]" />}
                 >
-                  FLAGSHIP: GAMEZONE
+                  PROYEK UTAMA: GAMEZONE
                 </BracketButton>
 
                 <BracketButton
@@ -113,7 +113,7 @@ export function Hero() {
                   variant="ghost"
                   size="md"
                 >
-                  GET IN TOUCH
+                  HUBUNGI SAYA
                 </BracketButton>
               </div>
 
@@ -191,7 +191,7 @@ export function Hero() {
               </div>
               <div className="font-[var(--font-reading)] text-[11px] text-[var(--muted-soft)] mt-1 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>Stable Hybrid Release</span>
+                <span>Rilis Desktop Hybrid Stabil</span>
               </div>
             </div>
 
@@ -203,25 +203,25 @@ export function Hero() {
                 <GithubIcon size={16} className="text-[var(--accent)]" />
               </div>
               <div className="font-[var(--font-functional)] text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">
-                GitHub Repositories
+                Repositori Publik
               </div>
               <div className="font-[var(--font-reading)] text-[11px] text-[var(--muted-soft)] mt-1">
-                Fullstack, Desktop &amp; Tools
+                Sistem Desktop, Web &amp; Utilitas
               </div>
             </div>
 
             <div className="border border-[var(--line)] bg-[var(--surface)] p-4 sm:p-5 rounded-xs hover:border-[var(--accent)] transition-all duration-150 hover:-translate-y-0.5 group">
               <div className="flex items-center justify-between mb-1">
                 <span className="font-[var(--font-heading)] text-xl sm:text-2xl font-black text-[var(--fg)] group-hover:text-[var(--accent)] transition-colors">
-                  TKJ + PTIK
+                  TKJ &amp; PTIK
                 </span>
                 <ShieldCheck size={16} className="text-[var(--accent)]" />
               </div>
               <div className="font-[var(--font-functional)] text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">
-                Infrastructure
+                Infrastruktur Jaringan
               </div>
               <div className="font-[var(--font-reading)] text-[11px] text-[var(--muted-soft)] mt-1">
-                Fiber Optic, MikroTik, UTP
+                Serat Optik, MikroTik, Kabel UTP
               </div>
             </div>
 
@@ -233,7 +233,7 @@ export function Hero() {
                 <Sparkles size={16} className="text-[var(--accent)]" />
               </div>
               <div className="font-[var(--font-functional)] text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">
-                Automated QA Suite
+                Pengujian Terotomasi
               </div>
               <div className="font-[var(--font-reading)] text-[11px] text-[var(--muted-soft)] mt-1">
                 Univ. Pancasila TI 2024–2028

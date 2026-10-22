@@ -28,16 +28,16 @@ export function Skills() {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--surface)] border border-[var(--line)] rounded-[2px] mb-6">
             <span className="w-2 h-2 bg-[var(--accent)] rounded-[1px] shadow-[0_0_8px_rgba(255,105,1,0.6)]" />
             <span className="font-[var(--font-functional)] text-xs font-semibold tracking-[0.14em] text-[var(--muted)] uppercase">
-              TECHNICAL MATRIX
+              MATRIKS KOMPETENSI TEKNIS
             </span>
           </div>
 
           {/* Section Headline */}
           <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--fg)] leading-tight mb-4 max-w-4xl">
-            FULL-STACK &amp; INFRASTRUCTURE CAPABILITIES.
+            KOMPETENSI PERANGKAT LUNAK &amp; JARINGAN.
           </h2>
           <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] max-w-3xl mb-12">
-            Matriks teknologi yang diorganisir berdasarkan domain kompetensi — dari protokol jaringan perangkat keras hingga platform software modern.
+            Klasifikasi penguasaan teknis berdasarkan domain keilmuan — mencakup bahasa pemrograman, kerangka kerja aplikasi web, subsistem desktop native, hingga konfigurasi infrastruktur jaringan fisik.
           </p>
         </Reveal>
 
@@ -76,10 +76,10 @@ export function Skills() {
 
                 {/* Bottom Subtle Indicator */}
                 <div className="pt-4 mt-6 border-t border-[rgba(255,255,255,0.04)] flex items-center justify-between text-[11px] font-[var(--font-functional)] text-[var(--muted-soft)]">
-                  <span>{category.skills.length} Capabilities</span>
+                  <span>{category.skills.length} Keahlian Terdata</span>
                   <span className="text-[var(--accent)] text-[10px] font-bold flex items-center gap-1">
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
-                    VERIFIED
+                    TERVALIDASI
                   </span>
                 </div>
               </div>

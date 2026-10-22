@@ -101,7 +101,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             className="inline-flex items-center gap-2 text-xs font-[var(--font-functional)] font-semibold text-[var(--accent)] hover:text-[var(--fg)] transition-colors"
           >
             <GithubIcon size={13} />
-            <span>INSPECT SOURCE REPOSITORY</span>
+            <span>LIHAT KODE SUMBER REPOSITORI</span>
             <ExternalLink size={11} />
           </a>
         )}

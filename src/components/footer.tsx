@@ -23,18 +23,18 @@ export function Footer() {
               <span className="text-xs text-[var(--muted-soft)] font-mono">{"// PORTFOLIO"}</span>
             </div>
             <p className="text-xs text-[var(--muted)] max-w-md font-[var(--font-reading)]">
-              Software Engineer &amp; Network Infrastructure Specialist. Bridging hardware layers with modern fullstack software.
+              Mahasiswa Teknik Informatika Universitas Pancasila &amp; Pengembang Perangkat Lunak. Memadukan keilmuan infrastruktur jaringan fisik dengan rekayasa sistem modern.
             </p>
           </div>
 
           {/* Quick Nav Anchors */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[var(--muted)]">
-            <a href="#about" className="hover:text-[var(--fg)] transition-colors">ABOUT</a>
-            <a href="#skills" className="hover:text-[var(--fg)] transition-colors">SKILLS</a>
+            <a href="#about" className="hover:text-[var(--fg)] transition-colors">TENTANG</a>
+            <a href="#skills" className="hover:text-[var(--fg)] transition-colors">KEAHLIAN</a>
             <a href="#flagship" className="hover:text-[var(--accent)] transition-colors">GAMEZONE</a>
-            <a href="#projects" className="hover:text-[var(--fg)] transition-colors">PROJECTS</a>
-            <a href="#experience" className="hover:text-[var(--fg)] transition-colors">EXPERIENCE</a>
-            <a href="#contact" className="hover:text-[var(--fg)] transition-colors">CONTACT</a>
+            <a href="#projects" className="hover:text-[var(--fg)] transition-colors">PROYEK</a>
+            <a href="#experience" className="hover:text-[var(--fg)] transition-colors">PENGALAMAN</a>
+            <a href="#contact" className="hover:text-[var(--fg)] transition-colors">KONTAK</a>
           </div>
 
           {/* Actions: Theme Toggle & Back to top button */}
@@ -44,7 +44,7 @@ export function Footer() {
               onClick={scrollToTop}
               className="flex items-center gap-2 px-3.5 py-2 bg-[var(--surface)] hover:bg-[var(--surface-raised)] border border-[var(--line)] hover:border-[var(--accent)] text-[var(--fg)] text-xs font-semibold rounded-xs transition-colors cursor-pointer group"
             >
-              <span>BACK TO TOP</span>
+              <span>KEMBALI KE ATAS</span>
               <ArrowUp size={14} className="text-[var(--accent)] group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
@@ -54,11 +54,11 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 text-[11px] text-[var(--muted-soft)]">
           <div className="flex items-center gap-2">
             <Terminal size={12} className="text-[var(--accent)]" />
-            <span>&copy; 2026 Muhammad Arya Alqadi. Handcrafted with precision.</span>
+            <span>&copy; 2026 Muhammad Arya Alqadi. Seluruh hak cipta dilindungi undang-undang.</span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span>SPEC: NEXT.JS 16 • TAILWIND CSS V4 • ARCHIVO &amp; HOST GROTESK</span>
+            <span>SPESIFIKASI: NEXT.JS 16 • TAILWIND CSS V4 • ARCHIVO &amp; HOST GROTESK</span>
           </div>
         </div>
       </div>

@@ -149,7 +149,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
             className={`font-[var(--font-functional)] text-[11px] font-bold text-[var(--muted)] uppercase tracking-[0.2em] pb-2 border-b border-[var(--line)] flex items-center justify-between ${getItemAnim(40).className}`}
             style={getItemAnim(40).style}
           >
-            <span>PLATFORM</span>
+            <span>PROFIL &amp; LANDASAN</span>
             <span className="text-[var(--accent)] font-mono text-[10px]">01</span>
           </div>
 
@@ -159,11 +159,11 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
                 className={`text-[10px] font-mono text-[var(--muted-soft)] uppercase tracking-wider block mb-1 ${getItemAnim(80).className}`}
                 style={getItemAnim(80).style}
               >
-                FOUNDATION
+                PROFIL PRIBADI
               </span>
               <MenuHeadingLink
                 href="#about"
-                text="About Developer"
+                text="Tentang Pengembang"
                 onClick={(e) => handleSmoothScroll(e, "about")}
                 className={getItemAnim(110).className}
                 style={getItemAnim(110).style}
@@ -175,11 +175,11 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
                 className={`text-[10px] font-mono text-[var(--muted-soft)] uppercase tracking-wider block mb-1 ${getItemAnim(140).className}`}
                 style={getItemAnim(140).style}
               >
-                COMPETENCY
+                KOMPETENSI TEKNIS
               </span>
               <MenuHeadingLink
                 href="#skills"
-                text="Skills Matrix"
+                text="Matriks Keahlian"
                 onClick={(e) => handleSmoothScroll(e, "skills")}
                 className={getItemAnim(170).className}
                 style={getItemAnim(170).style}
@@ -191,11 +191,11 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
                 className={`text-[10px] font-mono text-[var(--muted-soft)] uppercase tracking-wider block mb-1 ${getItemAnim(200).className}`}
                 style={getItemAnim(200).style}
               >
-                HYBRID DESKTOP ENGINE
+                ARSITEKTUR UTAMA
               </span>
               <MenuHeadingLink
                 href="#flagship"
-                text="GameZone v3.1.2"
+                text="GameZone Desktop"
                 onClick={(e) => handleSmoothScroll(e, "flagship")}
                 className={getItemAnim(230).className}
                 style={getItemAnim(230).style}
@@ -210,7 +210,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
             className={`font-[var(--font-functional)] text-[11px] font-bold text-[var(--muted)] uppercase tracking-[0.2em] pb-2 border-b border-[var(--line)] flex items-center justify-between ${getItemAnim(270).className}`}
             style={getItemAnim(270).style}
           >
-            <span>ENGINEERING</span>
+            <span>REKAYASA SISTEM</span>
             <span className="text-[var(--accent)] font-mono text-[10px]">02</span>
           </div>
 
@@ -220,11 +220,11 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
                 className={`text-[10px] font-mono text-[var(--muted-soft)] uppercase tracking-wider block mb-1 ${getItemAnim(300).className}`}
                 style={getItemAnim(300).style}
               >
-                PRODUCTION WORK
+                KATALOG KARYA
               </span>
               <MenuHeadingLink
                 href="#projects"
-                text="Projects Catalog"
+                text="Katalog Proyek"
                 onClick={(e) => handleSmoothScroll(e, "projects")}
                 className={getItemAnim(330).className}
                 style={getItemAnim(330).style}
@@ -236,11 +236,11 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
                 className={`text-[10px] font-mono text-[var(--muted-soft)] uppercase tracking-wider block mb-1 ${getItemAnim(360).className}`}
                 style={getItemAnim(360).style}
               >
-                EXPERIENCE ROADMAP
+                REKAM JEJAK AKADEMIK
               </span>
               <MenuHeadingLink
                 href="#experience"
-                text="Career Experience"
+                text="Pendidikan & Karir"
                 onClick={(e) => handleSmoothScroll(e, "experience")}
                 className={getItemAnim(390).className}
                 style={getItemAnim(390).style}
@@ -252,11 +252,11 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
                 className={`text-[10px] font-mono text-[var(--muted-soft)] uppercase tracking-wider block mb-1 ${getItemAnim(420).className}`}
                 style={getItemAnim(420).style}
               >
-                DIRECT INQUIRY
+                KORESPONDENSI
               </span>
               <MenuHeadingLink
                 href="#contact"
-                text="Contact & Dispatch"
+                text="Kontak & Diskusi"
                 onClick={(e) => handleSmoothScroll(e, "contact")}
                 className={getItemAnim(450).className}
                 style={getItemAnim(450).style}
@@ -271,7 +271,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
             className={`font-[var(--font-functional)] text-[11px] font-bold text-[var(--muted)] uppercase tracking-[0.2em] pb-2 border-b border-[var(--line)] flex items-center justify-between ${getItemAnim(490).className}`}
             style={getItemAnim(490).style}
           >
-            <span>SYSTEM &amp; CONNECT</span>
+            <span>KANAL &amp; SISTEM</span>
             <span className="text-[var(--accent)] font-mono text-[10px]">03</span>
           </div>
 
@@ -281,7 +281,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               className={`text-[10px] font-mono text-[var(--muted-soft)] uppercase tracking-wider block mb-1 ${getItemAnim(520).className}`}
               style={getItemAnim(520).style}
             >
-              DIRECT CHANNELS
+              KANAL KOMUNIKASI
             </span>
             <a
               href="https://wa.me/628987316516"
@@ -293,7 +293,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               <div className="flex items-center gap-2">
                 <WhatsappIcon size={14} className="text-emerald-400" />
                 <span className="font-[var(--font-functional)] text-xs font-semibold text-[var(--fg)]">
-                  WhatsApp Direct
+                  Pesan WhatsApp
                 </span>
               </div>
               <ArrowUpRight size={13} className="text-[var(--muted)] group-hover:text-[var(--accent)]" />
@@ -309,7 +309,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               <div className="flex items-center gap-2">
                 <LinkedinIcon size={14} className="text-cyan-400" />
                 <span className="font-[var(--font-functional)] text-xs font-semibold text-[var(--fg)]">
-                  LinkedIn Profile
+                  Profil LinkedIn
                 </span>
               </div>
               <ArrowUpRight size={13} className="text-[var(--muted)] group-hover:text-[var(--accent)]" />
@@ -325,7 +325,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               <div className="flex items-center gap-2">
                 <GithubIcon size={14} />
                 <span className="font-[var(--font-functional)] text-xs font-semibold text-[var(--fg)]">
-                  GitHub Repositories
+                  Repositori GitHub
                 </span>
               </div>
               <ArrowUpRight size={13} className="text-[var(--muted)] group-hover:text-[var(--accent)]" />
@@ -338,7 +338,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               className={`text-[10px] font-mono text-[var(--muted-soft)] uppercase tracking-wider block mb-2 ${getItemAnim(640).className}`}
               style={getItemAnim(640).style}
             >
-              THEME MODE
+              MODE TAMPILAN
             </span>
             <div className={getItemAnim(670).className} style={getItemAnim(670).style}>
               <ThemeToggle className="w-full justify-around py-1" />
@@ -353,7 +353,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
           Muhammad Arya Alqadi © {new Date().getFullYear()}
         </div>
         <div className={`font-mono text-[11px] text-[var(--accent)] ${getItemAnim(740).className}`} style={getItemAnim(740).style}>
-          SYSTEM_STATUS: ACTIVE // IPC_CONNECTED
+          STATUS SISTEM: AKTIF // KONEKSI TERVERIFIKASI
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ const SNIPPETS: CodeSnippet[] = [
     name: "api_bridge.py",
     lang: "Python 3.12 • WebView2",
     code: [
-      "# GameZone Platform IPC Bridge (v3.1.2)",
+      "# Modul Jembatan IPC GameZone (v3.1.2)",
       "import webview, sqlite3, json, asyncio",
       "",
       "class SystemBridgeAPI:",
@@ -26,7 +26,7 @@ const SNIPPETS: CodeSnippet[] = [
       "        self.ipc_latency_ms = 0.4",
       "",
       "    async def dispatch_payload(self, event_type, payload):",
-      "        # Direct zero-overhead IPC communication",
+      "        # Komunikasi IPC asinkron terdistribusi via antarmuka pywebview",
       "        print(f'[IPC_DISPATCH] event={event_type} status=OK')",
       "        return {'status': 'ACK', 'latency': '0.4ms', 'threads': 4}",
     ],
@@ -36,7 +36,7 @@ const SNIPPETS: CodeSnippet[] = [
     name: "mikrotik_vlan.rsc",
     lang: "RouterOS • VLAN Trunk",
     code: [
-      "# Enterprise VLAN & Inter-VLAN Routing",
+      "# Konfigurasi Trunk VLAN & Routing Antar-VLAN",
       "/interface vlan",
       "add name=VLAN10_SERVERS vlan-id=10 interface=sfp-sfpplus1",
       "add name=VLAN20_STUDENTS vlan-id=20 interface=sfp-sfpplus1",
@@ -46,7 +46,7 @@ const SNIPPETS: CodeSnippet[] = [
       "add address=10.20.20.1/24 interface=VLAN20_STUDENTS",
       "",
       "/ip firewall filter add chain=forward action=accept",
-      "# Fiber Link: 10 Gbps Active [TX/RX: 0 errors]",
+      "# Tautan Serat Optik Aktif [Status: Normal, 0 Galat]",
     ],
   },
   {
@@ -54,7 +54,7 @@ const SNIPPETS: CodeSnippet[] = [
     name: "OrderTransaction.php",
     lang: "PHP 8.3 • Laravel 11",
     code: [
-      "// Warkop Digital POS Transaction Engine",
+      "// Modul Layanan Transaksi Kasir Warkop Digital",
       "namespace App\\Services;",
       "",
       "class PosOrderService {",
@@ -194,13 +194,13 @@ export function CodeTerminal() {
         <div className="flex items-center gap-2.5">
           <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>LIVE EXEC</span>
+            <span>STATUS: AKTIF</span>
           </span>
           <span className="hidden sm:inline">|</span>
-          <span className="truncate max-w-[150px] sm:max-w-none">RUNTIME: {snippet.lang}</span>
+          <span className="truncate max-w-[150px] sm:max-w-none">LINGKUNGAN: {snippet.lang}</span>
         </div>
         <div className="flex items-center gap-3 font-mono">
-          <span className="text-[var(--accent)] font-semibold">LATENCY: 0.4ms</span>
+          <span className="text-[var(--accent)] font-semibold">LATENSI: 0.4ms</span>
           <span className="text-[var(--muted-soft)]">UTF-8</span>
         </div>
       </div>

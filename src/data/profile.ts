@@ -11,11 +11,11 @@ export const profileData: Profile = {
   whatsappUrl: "https://wa.me/628987316516",
   status: {
     available: true,
-    label: "OPEN FOR WORK",
+    label: "SIAP BERKONTRIBUSI",
   },
-  bio: "Fullstack & Systems Developer dengan fondasi ganda yang solid di bidang infrastruktur jaringan fisik (TKJ & PTIK) dan rekayasa software modern. Berpengalaman membangun aplikasi desktop hybrid berperforma tinggi, otomasi packaging, hingga platform web fullstack.",
+  bio: "Mahasiswa S1 Teknik Informatika Universitas Pancasila dengan latar belakang vokasi Teknik Komputer dan Jaringan (TKJ). Berfokus pada rekayasa perangkat lunak sistem, arsitektur desktop hybrid berbasis Python dan WebView2, serta pengembangan aplikasi web terintegrasi.",
   extendedBio:
-    "Perjalanan rekayasa saya berakar dari pemahaman mendalam tentang kabel UTP, terminasi fiber optic, switch, dan routing MikroTik di bangku SMK TKJ serta magang di PTIK Universitas Pancasila. Fondasi ini diperluas secara akademis di S1 Teknik Informatika Universitas Pancasila dan dibuktikan melalui karya software nyata: dari arsitektur desktop hybrid GameZone (v3.1.2) ber-IPC tanpa overhead, hingga sistem web Laravel & Next.js yang scalable.",
+    "Memulai kompetensi teknis dari pendidikan kejuruan Teknik Komputer dan Jaringan di SMK Teknindo Jaya serta praktik kerja lapangan di Pusat Teknologi Informasi dan Komunikasi (PTIK) Universitas Pancasila. Pengalaman lapangan tersebut mencakup instalasi dan penyambungan kabel serat optik (fusion splicing), penataan kabel terstruktur UTP, serta konfigurasi perangkat jaringan MikroTik RouterOS. Landasan praktis ini diperdalam secara akademis pada jenjang S1 Teknik Informatika di Universitas Pancasila dengan fokus pada algoritma, sistem operasi, basis data, dan arsitektur perangkat lunak terapan.",
   socials: [
     {
       name: "GitHub",
@@ -45,10 +45,10 @@ export const profileData: Profile = {
 };
 
 export const navItems: NavItem[] = [
-  { label: "ABOUT", href: "#about" },
-  { label: "SKILLS", href: "#skills" },
-  { label: "FLAGSHIP: GAMEZONE", href: "#flagship" },
-  { label: "PROJECTS", href: "#projects" },
-  { label: "EXPERIENCE", href: "#experience" },
-  { label: "CONTACT", href: "#contact" },
+  { label: "TENTANG", href: "#about" },
+  { label: "KEAHLIAN", href: "#skills" },
+  { label: "PROYEK UTAMA", href: "#flagship" },
+  { label: "PROYEK", href: "#projects" },
+  { label: "PENGALAMAN", href: "#experience" },
+  { label: "KONTAK", href: "#contact" },
 ];

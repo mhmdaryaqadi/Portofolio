@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Arya Alqadi — Fullstack & Systems Developer",
+  title: "Muhammad Arya Alqadi — Rekayasa Perangkat Lunak & Sistem",
   description:
-    "Portfolio of Muhammad Arya Alqadi. Fullstack & Systems Developer specializing in hybrid desktop architecture, networking infrastructure, and scalable web applications.",
+    "Portofolio Muhammad Arya Alqadi — Mahasiswa Teknik Informatika Universitas Pancasila dan Pengembang Perangkat Lunak. Berfokus pada perancangan arsitektur aplikasi desktop hibrida, rekayasa web, dan infrastruktur jaringan komputer.",
   authors: [{ name: "Muhammad Arya Alqadi", url: "https://github.com/mhmdaryaqadi" }],
 };
 
