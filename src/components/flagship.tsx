@@ -14,10 +14,10 @@ import {
   Boxes,
   Radio,
 } from "lucide-react";
-import { GithubIcon } from "@/components/icons";
 import { Reveal } from "@/components/reveal";
 import { BorderBeam } from "@/components/border-beam";
 import { CountUp } from "@/components/count-up";
+import { BracketButton } from "@/components/bracket-button";
 
 export function Flagship() {
   const flagship = projectsData.find((p) => p.isFlagship) || projectsData[0];
@@ -60,16 +60,14 @@ export function Flagship() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-ping" />
                 {flagship.status}
               </span>
-              <a
+              <BracketButton
                 href={flagship.repoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--surface)] hover:bg-[var(--surface-raised)] border border-[var(--line)] hover:border-[var(--accent)] text-[var(--fg)] text-xs font-[var(--font-functional)] font-bold rounded-xs tracking-wider transition-all duration-150 hover:-translate-y-0.5"
+                variant="secondary"
+                size="sm"
+                icon={<ExternalLink size={12} className="text-[var(--accent)]" />}
               >
-                <GithubIcon size={14} />
-                <span>RELEASES</span>
-                <ExternalLink size={12} className="text-[var(--accent)]" />
-              </a>
+                RELEASES
+              </BracketButton>
             </div>
           </div>
         </Reveal>
