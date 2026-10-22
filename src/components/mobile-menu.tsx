@@ -4,11 +4,40 @@ import React, { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { ScrambleText } from "@/components/scramble-text";
+import { useScrambleText } from "@/components/scramble-text";
 
 interface MegaMenuProps {
   isOpen: boolean;
   onClose: () => void;
+}
+
+function MenuHeadingLink({
+  href,
+  text,
+  onClick,
+  className,
+  style,
+}: {
+  href: string;
+  text: string;
+  onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  const { displayText, scramble } = useScrambleText(text, 140);
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      onMouseEnter={scramble}
+      className={`font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer ${className || ""}`}
+      style={style}
+    >
+      <span className="inline-block font-mono select-none pointer-events-none">
+        {displayText}
+      </span>
+    </a>
+  );
 }
 
 export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
@@ -132,14 +161,13 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               >
                 FOUNDATION
               </span>
-              <a
+              <MenuHeadingLink
                 href="#about"
+                text="About Developer"
                 onClick={(e) => handleSmoothScroll(e, "about")}
-                className={`font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer ${getItemAnim(110).className}`}
+                className={getItemAnim(110).className}
                 style={getItemAnim(110).style}
-              >
-                <ScrambleText text="About Developer" durationMs={140} />
-              </a>
+              />
             </div>
 
             <div>
@@ -149,14 +177,13 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               >
                 COMPETENCY
               </span>
-              <a
+              <MenuHeadingLink
                 href="#skills"
+                text="Skills Matrix"
                 onClick={(e) => handleSmoothScroll(e, "skills")}
-                className={`font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer ${getItemAnim(170).className}`}
+                className={getItemAnim(170).className}
                 style={getItemAnim(170).style}
-              >
-                <ScrambleText text="Skills Matrix" durationMs={140} />
-              </a>
+              />
             </div>
 
             <div>
@@ -166,14 +193,13 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               >
                 HYBRID DESKTOP ENGINE
               </span>
-              <a
+              <MenuHeadingLink
                 href="#flagship"
+                text="GameZone v3.1.2"
                 onClick={(e) => handleSmoothScroll(e, "flagship")}
-                className={`font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer ${getItemAnim(230).className}`}
+                className={getItemAnim(230).className}
                 style={getItemAnim(230).style}
-              >
-                <ScrambleText text="GameZone v3.1.2" durationMs={140} />
-              </a>
+              />
             </div>
           </div>
         </div>
@@ -196,14 +222,13 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               >
                 PRODUCTION WORK
               </span>
-              <a
+              <MenuHeadingLink
                 href="#projects"
+                text="Projects Catalog"
                 onClick={(e) => handleSmoothScroll(e, "projects")}
-                className={`font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer ${getItemAnim(330).className}`}
+                className={getItemAnim(330).className}
                 style={getItemAnim(330).style}
-              >
-                <ScrambleText text="Projects Catalog" durationMs={140} />
-              </a>
+              />
             </div>
 
             <div>
@@ -213,14 +238,13 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               >
                 EXPERIENCE ROADMAP
               </span>
-              <a
+              <MenuHeadingLink
                 href="#experience"
+                text="Career Experience"
                 onClick={(e) => handleSmoothScroll(e, "experience")}
-                className={`font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer ${getItemAnim(390).className}`}
+                className={getItemAnim(390).className}
                 style={getItemAnim(390).style}
-              >
-                <ScrambleText text="Career Experience" durationMs={140} />
-              </a>
+              />
             </div>
 
             <div>
@@ -230,14 +254,13 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               >
                 DIRECT INQUIRY
               </span>
-              <a
+              <MenuHeadingLink
                 href="#contact"
+                text="Contact & Dispatch"
                 onClick={(e) => handleSmoothScroll(e, "contact")}
-                className={`font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer ${getItemAnim(450).className}`}
+                className={getItemAnim(450).className}
                 style={getItemAnim(450).style}
-              >
-                <ScrambleText text="Contact & Dispatch" durationMs={140} />
-              </a>
+              />
             </div>
           </div>
         </div>

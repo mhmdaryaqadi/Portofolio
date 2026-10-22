@@ -4,19 +4,7 @@ import React, { useState, useRef, useCallback, useEffect } from "react";
 
 const CHARS = "!<>-_\\/[]{}—=+*^?#0123456789ABCDEF";
 
-interface ScrambleTextProps {
-  text: string;
-  className?: string;
-  triggerOnHover?: boolean;
-  durationMs?: number;
-}
-
-export function ScrambleText({
-  text,
-  className = "",
-  triggerOnHover = true,
-  durationMs = 160,
-}: ScrambleTextProps) {
+export function useScrambleText(text: string, durationMs: number = 150) {
   const [scrambledValue, setScrambledValue] = useState<string | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -59,6 +47,32 @@ export function ScrambleText({
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
   }, []);
+
+  return { displayText, scramble };
+}
+
+export interface ScrambleTextProps {
+  text: string;
+  className?: string;
+  triggerOnHover?: boolean;
+  durationMs?: number;
+  trigger?: boolean;
+}
+
+export function ScrambleText({
+  text,
+  className = "",
+  triggerOnHover = true,
+  durationMs = 150,
+  trigger,
+}: ScrambleTextProps) {
+  const { displayText, scramble } = useScrambleText(text, durationMs);
+
+  useEffect(() => {
+    if (trigger) {
+      scramble();
+    }
+  }, [trigger, scramble]);
 
   return (
     <span

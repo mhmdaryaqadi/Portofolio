@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ScrambleText } from "@/components/scramble-text";
+import { useScrambleText } from "@/components/scramble-text";
 
 interface BracketButtonProps {
   children?: React.ReactNode;
@@ -27,6 +27,16 @@ export function BracketButton({
   scramble = true,
 }: BracketButtonProps) {
   const content = label || (typeof children === "string" ? children : null);
+  const { displayText, scramble: runScramble } = useScrambleText(
+    content || "",
+    150
+  );
+
+  const handleMouseEnter = () => {
+    if (scramble && content) {
+      runScramble();
+    }
+  };
 
   const sizeClasses = {
     sm: "px-3 py-1.5 text-xs tracking-wider",
@@ -68,9 +78,11 @@ export function BracketButton({
         className="pointer-events-none absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-[var(--accent)] opacity-0 translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-150 ease-out"
       />
 
-      <span className="flex items-center justify-center gap-2 relative z-10">
+      <span className="flex items-center justify-center gap-2 relative z-10 pointer-events-none">
         {content && scramble ? (
-          <ScrambleText text={content} durationMs={150} />
+          <span className="inline-block font-mono select-none">
+            {displayText}
+          </span>
         ) : (
           children || content
         )}
@@ -83,14 +95,24 @@ export function BracketButton({
 
   if (href) {
     return (
-      <a href={href} onClick={onClick} className={baseClasses}>
+      <a
+        href={href}
+        onClick={onClick}
+        onMouseEnter={handleMouseEnter}
+        className={baseClasses}
+      >
         {innerContent}
       </a>
     );
   }
 
   return (
-    <button type="button" onClick={onClick} className={baseClasses}>
+    <button
+      type="button"
+      onClick={onClick}
+      onMouseEnter={handleMouseEnter}
+      className={baseClasses}
+    >
       {innerContent}
     </button>
   );

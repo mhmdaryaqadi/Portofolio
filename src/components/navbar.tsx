@@ -8,7 +8,31 @@ import { GithubIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { MobileMenu } from "@/components/mobile-menu";
 import { BracketButton } from "@/components/bracket-button";
-import { ScrambleText } from "@/components/scramble-text";
+import { useScrambleText } from "@/components/scramble-text";
+
+function NavbarLink({
+  href,
+  label,
+  onClick,
+}: {
+  href: string;
+  label: string;
+  onClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}) {
+  const { displayText, scramble } = useScrambleText(label, 140);
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      onMouseEnter={scramble}
+      className="font-[var(--font-functional)] text-xs font-semibold tracking-wide text-[var(--muted)] hover:text-[var(--fg)] transition-colors duration-150 py-1 group cursor-pointer"
+    >
+      <span className="inline-block font-mono select-none pointer-events-none">
+        {displayText}
+      </span>
+    </a>
+  );
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,17 +105,15 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Navigation Links with Live Scramble Effect */}
+          {/* Desktop Navigation Links with Live Scramble Effect on Entire Hit-Target */}
           <nav className="hidden xl:flex items-center gap-6" aria-label="Main Navigation">
             {navItems.map((item) => (
-              <a
+              <NavbarLink
                 key={item.href}
                 href={item.href}
+                label={item.label}
                 onClick={(e) => handleSmoothScroll(e, item.href)}
-                className="font-[var(--font-functional)] text-xs font-semibold tracking-wide text-[var(--muted)] hover:text-[var(--fg)] transition-colors duration-150 py-1 group cursor-pointer"
-              >
-                <ScrambleText text={item.label} durationMs={150} />
-              </a>
+              />
             ))}
           </nav>
 
