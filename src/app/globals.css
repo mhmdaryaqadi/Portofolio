@@ -167,6 +167,158 @@ body {
   outline-offset: 2px;
 }
 
+/*
+ * Blackbox.ai Motion & Keyframe Engine
+ * Extracted directly from production CSS bundles (2giw8c3272yxa.css)
+ */
+@keyframes bxRiseIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bxCellIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bxSealedRoute {
+  to {
+    stroke-dashoffset: -24px;
+  }
+}
+
+@keyframes bxSealedRouteReverse {
+  to {
+    stroke-dashoffset: 24px;
+  }
+}
+
+@keyframes bxFdePing {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.5);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
+
+@keyframes bxFdeBlink {
+  0%, 15% {
+    opacity: 1;
+  }
+  16%, 100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes bxHazardCrawl {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 24px 0;
+  }
+}
+
+@keyframes bxShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes bxBorderGlow {
+  0%, 100% {
+    border-color: rgba(255, 105, 1, 0.25);
+    box-shadow: 0 0 15px rgba(255, 105, 1, 0.08);
+  }
+  50% {
+    border-color: rgba(255, 105, 1, 0.7);
+    box-shadow: 0 0 25px rgba(255, 105, 1, 0.25);
+  }
+}
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Animation Utilities */
+.animate-route-flow {
+  stroke-dasharray: 6 6;
+  animation: bxSealedRoute 1.2s linear infinite;
+}
+
+.animate-route-flow-reverse {
+  stroke-dasharray: 6 6;
+  animation: bxSealedRouteReverse 1.2s linear infinite;
+}
+
+.animate-radar-ping {
+  animation: bxFdePing 2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.animate-fde-blink {
+  animation: bxFdeBlink 2.4s ease-in-out infinite;
+}
+
+.animate-terminal-blink {
+  animation: blink 1s step-start infinite;
+}
+
+.animate-hazard-crawl {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 105, 1, 0.15),
+    rgba(255, 105, 1, 0.15) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  background-size: 24px 24px;
+  animation: bxHazardCrawl 1.5s linear infinite;
+}
+
+.animate-shimmer-border {
+  animation: bxBorderGlow 3s ease-in-out infinite;
+}
+
+/* Scroll Reveal Classes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -175,5 +327,10 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
