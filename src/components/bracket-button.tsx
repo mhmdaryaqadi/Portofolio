@@ -7,7 +7,7 @@ interface BracketButtonProps {
   children?: React.ReactNode;
   label?: string;
   href?: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   className?: string;
@@ -47,27 +47,30 @@ export function BracketButton({
 
   const innerContent = (
     <>
-      {/* 4 Corner Siku Brackets (Exact Blackbox.ai Signature Bracket Button) */}
+      {/* 
+        4 Corner Siku Brackets (Exact Blackbox.ai Signature Bracket)
+        STRICT REQUIREMENT: Tersembunyi secara default (opacity-0), HANYA MUNCUL & LOCK saat hover (group-hover:opacity-100)
+      */}
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2 border-[var(--accent)] transition-all duration-200 group-hover:-top-1.5 group-hover:-left-1.5 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+        className="pointer-events-none absolute -top-1 -left-1 w-2.5 h-2.5 border-t-2 border-l-2 border-[var(--accent)] opacity-0 -translate-x-1 -translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-150 ease-out"
       />
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -top-1 -right-1 w-2 h-2 border-t-2 border-r-2 border-[var(--accent)] transition-all duration-200 group-hover:-top-1.5 group-hover:-right-1.5 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+        className="pointer-events-none absolute -top-1 -right-1 w-2.5 h-2.5 border-t-2 border-r-2 border-[var(--accent)] opacity-0 translate-x-1 -translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-150 ease-out"
       />
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-1 -left-1 w-2 h-2 border-b-2 border-l-2 border-[var(--accent)] transition-all duration-200 group-hover:-bottom-1.5 group-hover:-left-1.5 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+        className="pointer-events-none absolute -bottom-1 -left-1 w-2.5 h-2.5 border-b-2 border-l-2 border-[var(--accent)] opacity-0 -translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-150 ease-out"
       />
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-1 -right-1 w-2 h-2 border-b-2 border-r-2 border-[var(--accent)] transition-all duration-200 group-hover:-bottom-1.5 group-hover:-right-1.5 group-hover:scale-110 opacity-70 group-hover:opacity-100"
+        className="pointer-events-none absolute -bottom-1 -right-1 w-2.5 h-2.5 border-b-2 border-r-2 border-[var(--accent)] opacity-0 translate-x-1 translate-y-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-150 ease-out"
       />
 
       <span className="flex items-center justify-center gap-2 relative z-10">
         {content && scramble ? (
-          <ScrambleText text={content} />
+          <ScrambleText text={content} durationMs={150} />
         ) : (
           children || content
         )}

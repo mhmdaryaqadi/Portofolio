@@ -22,6 +22,28 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLElement>,
+    href: string
+  ) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const id = href.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 70;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+        window.history.pushState(null, "", href);
+      }
+    }
+  };
+
   return (
     <>
       <header
@@ -58,15 +80,16 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Navigation Links with Live Scramble Effect */}
+          {/* Desktop Navigation Links with Guaranteed Smooth Scroll & Fast Scramble Effect */}
           <nav className="hidden lg:flex items-center gap-6" aria-label="Main Navigation">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="font-[var(--font-functional)] text-xs font-semibold tracking-wide text-[var(--muted)] hover:text-[var(--fg)] transition-colors duration-150 py-1 group"
+                onClick={(e) => handleSmoothScroll(e, item.href)}
+                className="font-[var(--font-functional)] text-xs font-semibold tracking-wide text-[var(--muted)] hover:text-[var(--fg)] transition-colors duration-150 py-1 group cursor-pointer"
               >
-                <ScrambleText text={item.label} />
+                <ScrambleText text={item.label} durationMs={150} />
               </a>
             ))}
           </nav>
@@ -91,6 +114,7 @@ export function Navbar() {
             <div className="hidden sm:block">
               <BracketButton
                 href="#contact"
+                onClick={(e) => handleSmoothScroll(e, "#contact")}
                 variant="primary"
                 size="sm"
                 icon={<ArrowUpRight size={13} className="stroke-[2.5]" />}
@@ -107,10 +131,10 @@ export function Navbar() {
               className="lg:hidden relative group p-2 rounded-xs border border-[var(--line)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--fg)] hover:border-[var(--accent)] flex items-center justify-center transition-colors cursor-pointer"
             >
               {/* Mini Corner Brackets */}
-              <span className="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-[var(--accent)] opacity-60 group-hover:opacity-100" />
-              <span className="absolute -top-1 -right-1 w-1.5 h-1.5 border-t border-r border-[var(--accent)] opacity-60 group-hover:opacity-100" />
-              <span className="absolute -bottom-1 -left-1 w-1.5 h-1.5 border-b border-l border-[var(--accent)] opacity-60 group-hover:opacity-100" />
-              <span className="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-[var(--accent)] opacity-60 group-hover:opacity-100" />
+              <span className="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <span className="absolute -top-1 -right-1 w-1.5 h-1.5 border-t border-r border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <span className="absolute -bottom-1 -left-1 w-1.5 h-1.5 border-b border-l border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
+              <span className="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <Menu size={18} />
             </button>
@@ -118,7 +142,7 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Full-Screen Blackbox Tech Overlay for Mobile */}
+      {/* Full-Screen Blackbox Tech Overlay for Mobile with Slide-Down Animation */}
       <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>
   );

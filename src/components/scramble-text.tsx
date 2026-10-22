@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useCallback, useEffect } from "react";
 
-const CHARS = "!<>-_\\/[]{}—=+*^?#________0123456789ABCDEF";
+const CHARS = "!<>-_\\/[]{}—=+*^?#0123456789ABCDEF";
 
 interface ScrambleTextProps {
   text: string;
@@ -15,7 +15,7 @@ export function ScrambleText({
   text,
   className = "",
   triggerOnHover = true,
-  durationMs = 350,
+  durationMs = 160,
 }: ScrambleTextProps) {
   const [scrambledValue, setScrambledValue] = useState<string | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -27,8 +27,9 @@ export function ScrambleText({
 
     const length = text.length;
     let iteration = 0;
-    const totalIterations = Math.max(length * 2, 8);
-    const stepDuration = Math.max(Math.floor(durationMs / totalIterations), 15);
+    // Fast snappy iterations
+    const totalIterations = Math.max(length * 1.5, 6);
+    const stepDuration = Math.max(Math.floor(durationMs / totalIterations), 10);
 
     intervalRef.current = setInterval(() => {
       setScrambledValue(() => {
@@ -36,7 +37,7 @@ export function ScrambleText({
           .split("")
           .map((char, idx) => {
             if (char === " ") return " ";
-            if (idx < iteration / 2) {
+            if (idx < iteration / 1.5) {
               return text[idx];
             }
             return CHARS[Math.floor(Math.random() * CHARS.length)];

@@ -1,3 +1,5 @@
+"use client";
+
 import { profileData } from "@/data/profile";
 import { ArrowUpRight, Mail, ShieldCheck, Terminal, Cpu, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
@@ -7,6 +9,28 @@ import { CountUp } from "@/components/count-up";
 import { BracketButton } from "@/components/bracket-button";
 
 export function Hero() {
+  const handleSmoothScroll = (
+    e: React.MouseEvent<HTMLElement>,
+    href: string
+  ) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const id = href.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 70;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+        window.history.pushState(null, "", href);
+      }
+    }
+  };
+
   return (
     <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-[var(--line)]">
       {/* Background Radial Ambient Glow */}
@@ -65,6 +89,7 @@ export function Hero() {
               <div className="flex flex-wrap items-center gap-4 mb-8">
                 <BracketButton
                   href="#projects"
+                  onClick={(e) => handleSmoothScroll(e, "#projects")}
                   variant="primary"
                   size="md"
                   icon={<ArrowUpRight size={15} className="stroke-[2.5]" />}
@@ -74,6 +99,7 @@ export function Hero() {
 
                 <BracketButton
                   href="#flagship"
+                  onClick={(e) => handleSmoothScroll(e, "#flagship")}
                   variant="secondary"
                   size="md"
                   icon={<Terminal size={15} className="text-[var(--accent)]" />}
@@ -83,6 +109,7 @@ export function Hero() {
 
                 <BracketButton
                   href="#contact"
+                  onClick={(e) => handleSmoothScroll(e, "#contact")}
                   variant="ghost"
                   size="md"
                 >
