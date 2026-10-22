@@ -147,7 +147,7 @@ export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
               <a
                 href="#flagship"
                 onClick={(e) => handleSmoothScroll(e, "flagship")}
-                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--accent)] hover:underline transition-all block group cursor-pointer"
+                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer"
               >
                 <ScrambleText text="GameZone v3.1.2" durationMs={140} />
               </a>
