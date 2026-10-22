@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens
+ * Values are taken from blackbox.ai production CSS (--bx-* custom properties),
+ * extracted 2026-10-22. Dark is the default scheme; light values mirror their
+ * light-mode counterparts. Theme switching (system/light/dark) is wired in a
+ * later milestone via the `data-theme` attribute on <html>.
+ */
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg: light-dark(#f7f7f4, #080808);
+  --bg-alt: light-dark(#f2f2ef, #0a0a0a);
+  --surface: light-dark(#ededea, #0c0c0c);
+  --surface-raised: light-dark(#d6d6d1, #181818);
+
+  /* Text */
+  --fg: light-dark(#0f0f0e, #ffffff);
+  --ink: light-dark(#0f0f0e, #f2f2f0);
+  --prose: light-dark(#2b2b29, #c6c6c2);
+  --code: light-dark(#3a3a38, #cfcfcb);
+  --muted: light-dark(#6b6b68, #82827f);
+  --muted-soft: light-dark(#8a8a86, #4a4a49);
+
+  /* Lines */
+  --line: light-dark(#deded9, #1a1a1a);
+  --rail: color-mix(in srgb, var(--fg) 11.7%, transparent);
+  --rail-mark: color-mix(in srgb, var(--fg) 34%, transparent);
+
+  /* Accent */
+  --accent: #ff6901;
+  --accent-text: light-dark(#b84a00, #ff6901);
+  --on-accent: #0c0c0c;
+
+  /* Layout */
+  --frame: 1536px;
+  --gutter: max(clamp(1.375rem, 4.375vw, 3.5rem), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
+  --header-h: calc(65px + env(safe-area-inset-top, 0px));
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="system"] {
+  color-scheme: light dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-fg: var(--fg);
+  --color-ink: var(--ink);
+  --color-prose: var(--prose);
+  --color-code: var(--code);
+  --color-muted: var(--muted);
+  --color-muted-soft: var(--muted-soft);
+  --color-line: var(--line);
+  --color-rail: var(--rail);
+  --color-rail-mark: var(--rail-mark);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-on-accent: var(--on-accent);
+
+  /* Font roles mirror Blackbox: heading = Archivo, reading = Host Grotesk,
+     functional (nav, labels, buttons, code) = monospace. */
+  --font-heading: var(--font-archivo), system-ui, sans-serif;
+  --font-reading: var(--font-host-grotesk), system-ui, sans-serif;
+  --font-functional: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: var(--font-reading);
+  --font-mono: var(--font-functional);
+}
+
+@theme {
+  /* Easing curves found in Blackbox CSS, most-used first. */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-sine: cubic-bezier(0.45, 0, 0.55, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-reading);
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
