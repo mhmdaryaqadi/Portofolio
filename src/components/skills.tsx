@@ -31,8 +31,8 @@ export function Skills() {
         </div>
 
         {/* Section Headline */}
-        <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight mb-4 max-w-4xl">
-          FULL-STACK & INFRASTRUCTURE CAPABILITIES.
+        <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--fg)] leading-tight mb-4 max-w-4xl">
+          FULL-STACK &amp; INFRASTRUCTURE CAPABILITIES.
         </h2>
         <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] max-w-3xl mb-12">
           Matriks teknologi yang diorganisir berdasarkan domain kompetensi — dari protokol jaringan perangkat keras hingga platform software modern.
@@ -51,7 +51,7 @@ export function Skills() {
                   <div className="w-8 h-8 rounded-xs bg-[var(--surface-raised)] border border-[var(--line)] flex items-center justify-center">
                     {getCategoryIcon(category.icon)}
                   </div>
-                  <h3 className="font-[var(--font-heading)] text-sm font-bold uppercase tracking-wider text-white">
+                  <h3 className="font-[var(--font-heading)] text-sm font-bold uppercase tracking-wider text-[var(--fg)]">
                     {category.title}
                   </h3>
                 </div>
@@ -63,8 +63,8 @@ export function Skills() {
                       key={idx}
                       className={`px-3 py-1 text-xs font-[var(--font-functional)] rounded-xs border transition-all duration-150 ${
                         skill.isHighlight
-                          ? "bg-[rgba(255,105,1,0.08)] border-[rgba(255,105,1,0.35)] text-white font-medium hover:border-[var(--accent)] hover:bg-[rgba(255,105,1,0.15)]"
-                          : "bg-[var(--bg)] border-[var(--line)] text-[var(--muted)] hover:text-white hover:border-[var(--color-rail-mark)]"
+                          ? "bg-[rgba(255,105,1,0.08)] border-[rgba(255,105,1,0.35)] text-[var(--fg)] font-medium hover:border-[var(--accent)] hover:bg-[rgba(255,105,1,0.15)]"
+                          : "bg-[var(--bg)] border-[var(--line)] text-[var(--muted)] hover:text-[var(--fg)] hover:border-[var(--color-rail-mark)]"
                       }`}
                     >
                       {skill.name}

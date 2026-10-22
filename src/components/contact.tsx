@@ -48,7 +48,7 @@ export function Contact() {
 
         {/* Section Headline */}
         <div className="max-w-3xl mb-12">
-          <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+          <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--fg)] leading-tight">
             LET&apos;S BUILD RESILIENT SYSTEMS TOGETHER.
           </h2>
           <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] mt-4 leading-relaxed">
@@ -67,7 +67,7 @@ export function Contact() {
               <div className="font-[var(--font-functional)] text-xs text-[var(--muted)] uppercase tracking-wider mb-1">
                 DIRECT INBOX
               </div>
-              <div className="font-[var(--font-heading)] text-sm font-bold text-white mb-2 break-all">
+              <div className="font-[var(--font-heading)] text-sm font-bold text-[var(--fg)] mb-2 break-all">
                 {profileData.email}
               </div>
               <p className="font-[var(--font-reading)] text-xs text-[var(--muted)] mb-5">
@@ -79,8 +79,8 @@ export function Contact() {
               onClick={handleCopyEmail}
               className={`w-full py-2.5 px-3 rounded-xs font-[var(--font-functional)] text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all ${
                 copied
-                  ? "bg-[rgba(34,197,94,0.15)] border border-[rgba(34,197,94,0.5)] text-green-400"
-                  : "bg-[var(--surface-raised)] hover:bg-[var(--accent)] text-white hover:text-black border border-[var(--line)] hover:border-[var(--accent)]"
+                  ? "bg-[rgba(34,197,94,0.15)] border border-[rgba(34,197,94,0.5)] text-green-500"
+                  : "bg-[var(--surface-raised)] hover:bg-[var(--accent)] text-[var(--fg)] hover:text-white border border-[var(--line)] hover:border-[var(--accent)] cursor-pointer"
               }`}
             >
               {copied ? (
@@ -111,7 +111,7 @@ export function Contact() {
               <div className="font-[var(--font-functional)] text-xs text-[var(--muted)] uppercase tracking-wider mb-1">
                 INSTANT MESSAGING
               </div>
-              <div className="font-[var(--font-heading)] text-sm font-bold text-white mb-2">
+              <div className="font-[var(--font-heading)] text-sm font-bold text-[var(--fg)] mb-2">
                 WhatsApp Direct
               </div>
               <p className="font-[var(--font-reading)] text-xs text-[var(--muted)] mb-5">
@@ -119,7 +119,7 @@ export function Contact() {
               </p>
             </div>
 
-            <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-white pt-3 border-t border-[rgba(255,255,255,0.04)]">
+            <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-[var(--fg)] pt-3 border-t border-[rgba(255,255,255,0.04)]">
               <span>SEND WHATSAPP MESSAGE</span>
               <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
@@ -139,7 +139,7 @@ export function Contact() {
               <div className="font-[var(--font-functional)] text-xs text-[var(--muted)] uppercase tracking-wider mb-1">
                 PROFESSIONAL NETWORK
               </div>
-              <div className="font-[var(--font-heading)] text-sm font-bold text-white mb-2">
+              <div className="font-[var(--font-heading)] text-sm font-bold text-[var(--fg)] mb-2">
                 LinkedIn Profile
               </div>
               <p className="font-[var(--font-reading)] text-xs text-[var(--muted)] mb-5">
@@ -147,7 +147,7 @@ export function Contact() {
               </p>
             </div>
 
-            <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-white pt-3 border-t border-[rgba(255,255,255,0.04)]">
+            <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-[var(--fg)] pt-3 border-t border-[rgba(255,255,255,0.04)]">
               <span>CONNECT ON LINKEDIN</span>
               <ExternalLink size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
@@ -167,7 +167,7 @@ export function Contact() {
               <div className="font-[var(--font-functional)] text-xs text-[var(--muted)] uppercase tracking-wider mb-1">
                 CODE ARCHIVES
               </div>
-              <div className="font-[var(--font-heading)] text-sm font-bold text-white mb-2">
+              <div className="font-[var(--font-heading)] text-sm font-bold text-[var(--fg)] mb-2">
                 GitHub Repositories
               </div>
               <p className="font-[var(--font-reading)] text-xs text-[var(--muted)] mb-5">
@@ -175,7 +175,7 @@ export function Contact() {
               </p>
             </div>
 
-            <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-white pt-3 border-t border-[rgba(255,255,255,0.04)]">
+            <div className="inline-flex items-center justify-between text-xs font-[var(--font-functional)] font-bold text-[var(--accent)] group-hover:text-[var(--fg)] pt-3 border-t border-[rgba(255,255,255,0.04)]">
               <span>VIEW GITHUB PROFILE</span>
               <ExternalLink size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
@@ -189,7 +189,7 @@ export function Contact() {
               <Sparkles size={16} />
             </div>
             <div>
-              <div className="font-[var(--font-functional)] text-xs font-bold text-white uppercase tracking-wider">
+              <div className="font-[var(--font-functional)] text-xs font-bold text-[var(--fg)] uppercase tracking-wider">
                 CURRENT WORK STATUS
               </div>
               <div className="font-[var(--font-reading)] text-xs text-[var(--muted)]">

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ArrowUp, Terminal } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -16,7 +17,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="w-2.5 h-2.5 bg-[var(--accent)] rounded-[1px] shadow-[0_0_8px_rgba(255,105,1,0.6)]" />
-              <span className="font-[var(--font-heading)] font-black text-sm tracking-wider text-white uppercase">
+              <span className="font-[var(--font-heading)] font-black text-sm tracking-wider text-[var(--fg)] uppercase">
                 MUHAMMAD ARYA ALQADI
               </span>
               <span className="text-xs text-[var(--muted-soft)] font-mono">{"// PORTFOLIO"}</span>
@@ -28,22 +29,25 @@ export function Footer() {
 
           {/* Quick Nav Anchors */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[var(--muted)]">
-            <a href="#about" className="hover:text-white transition-colors">ABOUT</a>
-            <a href="#skills" className="hover:text-white transition-colors">SKILLS</a>
+            <a href="#about" className="hover:text-[var(--fg)] transition-colors">ABOUT</a>
+            <a href="#skills" className="hover:text-[var(--fg)] transition-colors">SKILLS</a>
             <a href="#flagship" className="hover:text-[var(--accent)] transition-colors">GAMEZONE</a>
-            <a href="#projects" className="hover:text-white transition-colors">PROJECTS</a>
-            <a href="#experience" className="hover:text-white transition-colors">EXPERIENCE</a>
-            <a href="#contact" className="hover:text-white transition-colors">CONTACT</a>
+            <a href="#projects" className="hover:text-[var(--fg)] transition-colors">PROJECTS</a>
+            <a href="#experience" className="hover:text-[var(--fg)] transition-colors">EXPERIENCE</a>
+            <a href="#contact" className="hover:text-[var(--fg)] transition-colors">CONTACT</a>
           </div>
 
-          {/* Back to top button */}
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 px-3.5 py-2 bg-[var(--surface)] hover:bg-[var(--surface-raised)] border border-[var(--line)] hover:border-[var(--accent)] text-white text-xs font-semibold rounded-xs transition-colors cursor-pointer group"
-          >
-            <span>BACK TO TOP</span>
-            <ArrowUp size={14} className="text-[var(--accent)] group-hover:-translate-y-0.5 transition-transform" />
-          </button>
+          {/* Actions: Theme Toggle & Back to top button */}
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 px-3.5 py-2 bg-[var(--surface)] hover:bg-[var(--surface-raised)] border border-[var(--line)] hover:border-[var(--accent)] text-[var(--fg)] text-xs font-semibold rounded-xs transition-colors cursor-pointer group"
+            >
+              <span>BACK TO TOP</span>
+              <ArrowUp size={14} className="text-[var(--accent)] group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </div>
         </div>
 
         {/* Bottom Credits & Spec */}

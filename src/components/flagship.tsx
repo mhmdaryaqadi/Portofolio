@@ -40,7 +40,7 @@ export function Flagship() {
         {/* Section Headline */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+            <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--fg)] leading-tight">
               GAMEZONE PLATFORM &amp; IPC ENGINE.
             </h2>
             <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] max-w-2xl mt-3">
@@ -56,7 +56,7 @@ export function Flagship() {
               href={flagship.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--surface)] hover:bg-[var(--surface-raised)] border border-[var(--line)] hover:border-[var(--accent)] text-white text-xs font-[var(--font-functional)] font-bold rounded-xs tracking-wider transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[var(--surface)] hover:bg-[var(--surface-raised)] border border-[var(--line)] hover:border-[var(--accent)] text-[var(--fg)] text-xs font-[var(--font-functional)] font-bold rounded-xs tracking-wider transition-colors"
             >
               <GithubIcon size={14} />
               <span>RELEASES</span>
@@ -66,7 +66,7 @@ export function Flagship() {
         </div>
 
         {/* Flagship Hero Card Frame */}
-        <div className="relative rounded-xs border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-10 transition-all duration-300 hover:border-[var(--color-rail-mark)] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.8)]">
+        <div className="relative rounded-xs border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-10 transition-all duration-300 hover:border-[var(--color-rail-mark)] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
           {/* Top Status Bar Inside Card */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-[var(--line)]">
             <div className="flex items-center gap-3">
@@ -77,7 +77,7 @@ export function Flagship() {
                 <span className="font-[var(--font-functional)] text-[11px] text-[var(--muted)] tracking-wider uppercase block">
                   ARCHITECTURE DOMAIN
                 </span>
-                <span className="font-[var(--font-heading)] text-sm sm:text-base font-bold text-white uppercase tracking-tight">
+                <span className="font-[var(--font-heading)] text-sm sm:text-base font-bold text-[var(--fg)] uppercase tracking-tight">
                   Hybrid Python 3 + WebView2 Subsystem
                 </span>
               </div>
@@ -93,14 +93,14 @@ export function Flagship() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10">
             {/* Left: Deep Technical Description & Problem Solved */}
             <div className="lg:col-span-6 space-y-5">
-              <h3 className="font-[var(--font-heading)] text-xl sm:text-2xl font-bold uppercase tracking-tight text-white">
+              <h3 className="font-[var(--font-heading)] text-xl sm:text-2xl font-bold uppercase tracking-tight text-[var(--fg)]">
                 Low Latency Desktop-to-OS IPC Bridge
               </h3>
               <p className="font-[var(--font-reading)] text-sm sm:text-base text-[var(--prose)] leading-relaxed">
                 Tantangan utama pada platform desktop modern adalah memadukan fleksibilitas visual berbasis web dengan kontrol sistem operasi tingkat rendah tanpa membebani memori seperti Electron tradisional.
               </p>
               <p className="font-[var(--font-reading)] text-sm sm:text-base text-[var(--muted)] leading-relaxed">
-                GameZone memecahkan masalah ini dengan merancang bridge IPC dua arah berukuran <strong>112 KB (<code className="text-white font-mono">api.py</code>)</strong> yang menghubungkan antarmuka grafis langsung ke thread native Python. Seluruh panggilan API dieksekusi secara asinkron dengan persistensi data lokal berbasis <strong>SQLite WAL (Write-Ahead Logging)</strong>.
+                GameZone memecahkan masalah ini dengan merancang bridge IPC dua arah berukuran <strong>112 KB (<code className="text-[var(--fg)] font-mono">api.py</code>)</strong> yang menghubungkan antarmuka grafis langsung ke thread native Python. Seluruh panggilan API dieksekusi secara asinkron dengan persistensi data lokal berbasis <strong>SQLite WAL (Write-Ahead Logging)</strong>.
               </p>
 
               {/* Architectural Highlights */}
@@ -110,7 +110,7 @@ export function Flagship() {
                     <Zap size={12} />
                   </div>
                   <div>
-                    <span className="font-[var(--font-heading)] text-xs font-bold text-white uppercase tracking-wide block">
+                    <span className="font-[var(--font-heading)] text-xs font-bold text-[var(--fg)] uppercase tracking-wide block">
                       Bi-directional IPC Protocol
                     </span>
                     <span className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
@@ -124,7 +124,7 @@ export function Flagship() {
                     <Database size={12} />
                   </div>
                   <div>
-                    <span className="font-[var(--font-heading)] text-xs font-bold text-white uppercase tracking-wide block">
+                    <span className="font-[var(--font-heading)] text-xs font-bold text-[var(--fg)] uppercase tracking-wide block">
                       SQLite Write-Ahead Logging (WAL)
                     </span>
                     <span className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
@@ -138,7 +138,7 @@ export function Flagship() {
                     <PackageCheck size={12} />
                   </div>
                   <div>
-                    <span className="font-[var(--font-heading)] text-xs font-bold text-white uppercase tracking-wide block">
+                    <span className="font-[var(--font-heading)] text-xs font-bold text-[var(--fg)] uppercase tracking-wide block">
                       Automated Delta Packaging &amp; Hotfix
                     </span>
                     <span className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
@@ -152,7 +152,7 @@ export function Flagship() {
                     <ShieldCheck size={12} />
                   </div>
                   <div>
-                    <span className="font-[var(--font-heading)] text-xs font-bold text-white uppercase tracking-wide block">
+                    <span className="font-[var(--font-heading)] text-xs font-bold text-[var(--fg)] uppercase tracking-wide block">
                       Multi-Service Session Handling
                     </span>
                     <span className="font-[var(--font-reading)] text-xs text-[var(--muted)]">
@@ -178,7 +178,7 @@ export function Flagship() {
 
               {/* Schematic Box: UI Layer */}
               <div className="border border-[var(--line)] bg-[var(--surface)] p-3.5 rounded-xs mb-3 text-center transition-colors hover:border-[var(--accent)]">
-                <div className="flex items-center justify-center gap-2 text-white font-bold text-xs uppercase mb-1">
+                <div className="flex items-center justify-center gap-2 text-[var(--fg)] font-bold text-xs uppercase mb-1">
                   <Layers size={14} className="text-[var(--accent)]" />
                   <span>UI / Presentation Layer (Edge WebView2)</span>
                 </div>
@@ -198,7 +198,7 @@ export function Flagship() {
 
               {/* Schematic Box: Python Core */}
               <div className="border border-[rgba(255,105,1,0.4)] bg-[rgba(255,105,1,0.04)] p-4 rounded-xs mb-3 text-center">
-                <div className="flex items-center justify-center gap-2 text-white font-bold text-xs uppercase mb-1">
+                <div className="flex items-center justify-center gap-2 text-[var(--fg)] font-bold text-xs uppercase mb-1">
                   <Cpu size={14} className="text-[var(--accent)]" />
                   <span>Native Core Bridge (api.py • 112 KB)</span>
                 </div>
@@ -218,17 +218,17 @@ export function Flagship() {
               <div className="grid grid-cols-3 gap-2 text-center text-[10px]">
                 <div className="border border-[var(--line)] bg-[var(--surface)] p-2.5 rounded-xs">
                   <Database size={14} className="mx-auto text-[var(--accent)] mb-1" />
-                  <div className="font-bold text-white uppercase">SQLite WAL</div>
+                  <div className="font-bold text-[var(--fg)] uppercase">SQLite WAL</div>
                   <div className="text-[9px] text-[var(--muted)]">Multi-reader Sync</div>
                 </div>
                 <div className="border border-[var(--line)] bg-[var(--surface)] p-2.5 rounded-xs">
                   <Boxes size={14} className="mx-auto text-[var(--accent)] mb-1" />
-                  <div className="font-bold text-white uppercase">Steam IPC</div>
+                  <div className="font-bold text-[var(--fg)] uppercase">Steam IPC</div>
                   <div className="text-[9px] text-[var(--muted)]">Local Named Pipe</div>
                 </div>
                 <div className="border border-[var(--line)] bg-[var(--surface)] p-2.5 rounded-xs">
                   <ShieldCheck size={14} className="mx-auto text-[var(--accent)] mb-1" />
-                  <div className="font-bold text-white uppercase">Discord Auth</div>
+                  <div className="font-bold text-[var(--fg)] uppercase">Discord Auth</div>
                   <div className="text-[9px] text-[var(--muted)]">OAuth2 Session</div>
                 </div>
               </div>
@@ -236,7 +236,7 @@ export function Flagship() {
               {/* Test Runner Strip */}
               <div className="mt-4 pt-3 border-t border-[var(--line)] flex items-center justify-between text-[11px] text-[var(--muted)]">
                 <span>Automated QA Suite:</span>
-                <span className="font-mono text-white text-[10px] bg-[var(--surface-raised)] px-2 py-0.5 border border-[var(--line)] rounded-xs">
+                <span className="font-mono text-[var(--fg)] text-[10px] bg-[var(--surface-raised)] px-2 py-0.5 border border-[var(--line)] rounded-xs">
                   qa_runner.py (100% Pass)
                 </span>
               </div>
@@ -250,7 +250,7 @@ export function Flagship() {
                 <div className="font-[var(--font-functional)] text-[11px] text-[var(--muted)] uppercase tracking-wider mb-1">
                   {metric.label}
                 </div>
-                <div className="font-[var(--font-heading)] text-xl sm:text-2xl font-black text-white">
+                <div className="font-[var(--font-heading)] text-xl sm:text-2xl font-black text-[var(--fg)]">
                   {metric.value}
                 </div>
               </div>
@@ -265,7 +265,7 @@ export function Flagship() {
             {flagship.techStack.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-2.5 py-1 bg-[var(--bg)] border border-[var(--line)] rounded-xs text-xs font-[var(--font-functional)] text-white hover:border-[var(--accent)] transition-colors"
+                className="px-2.5 py-1 bg-[var(--bg)] border border-[var(--line)] rounded-xs text-xs font-[var(--font-functional)] text-[var(--fg)] hover:border-[var(--accent)] transition-colors"
               >
                 {tech}
               </span>

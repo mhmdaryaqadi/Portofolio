@@ -40,21 +40,21 @@ export function Hero() {
         </div>
 
         {/* Huge Bold Headline (Archivo Typography) */}
-        <h1 className="font-[var(--font-heading)] text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[1.04] mb-6 max-w-5xl">
+        <h1 className="font-[var(--font-heading)] text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-[var(--fg)] leading-[1.04] mb-6 max-w-5xl">
           HIGH-PERFORMANCE HYBRID SYSTEMS.{" "}
           <span className="text-[var(--prose)]">ENGINEERED FROM HARDWARE TO CLOUD.</span>
         </h1>
 
         {/* Narrative Subtitle */}
         <p className="font-[var(--font-reading)] text-base sm:text-lg md:text-xl text-[var(--muted)] max-w-3xl leading-relaxed mb-10">
-          Saya <strong className="text-white font-semibold">{profileData.name}</strong> — menjembatani fondasi infrastruktur jaringan fisik & hardware (TKJ + PTIK) dengan arsitektur software modern: dari desktop engine hybrid (GameZone v3.1.2) ber-IPC instan hingga aplikasi web fullstack berskala produksi.
+          Saya <strong className="text-[var(--fg)] font-semibold">{profileData.name}</strong> — menjembatani fondasi infrastruktur jaringan fisik &amp; hardware (TKJ + PTIK) dengan arsitektur software modern: dari desktop engine hybrid (GameZone v3.1.2) ber-IPC instan hingga aplikasi web fullstack berskala produksi.
         </p>
 
         {/* CTA Button Row */}
         <div className="flex flex-wrap items-center gap-4 mb-16">
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-white text-black font-[var(--font-heading)] text-xs sm:text-sm font-black uppercase tracking-wider rounded-xs hover:bg-neutral-200 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 shadow-[0_0_20px_rgba(255,255,255,0.18)]"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[var(--fg)] text-[var(--bg)] font-[var(--font-heading)] text-xs sm:text-sm font-black uppercase tracking-wider rounded-xs hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 shadow-sm"
           >
             <span>EXPLORE PROJECTS</span>
             <ArrowUpRight size={16} className="stroke-[2.5]" />
@@ -62,7 +62,7 @@ export function Hero() {
 
           <a
             href="#flagship"
-            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[var(--surface)] text-white border border-[var(--line)] font-[var(--font-heading)] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-[var(--surface-raised)] hover:border-[var(--color-rail-mark)] hover:-translate-y-0.5 transition-all duration-150"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[var(--surface)] text-[var(--fg)] border border-[var(--line)] font-[var(--font-heading)] text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-[var(--surface-raised)] hover:border-[var(--color-rail-mark)] hover:-translate-y-0.5 transition-all duration-150"
           >
             <Terminal size={16} className="text-[var(--accent)]" />
             <span>FLAGSHIP: GAMEZONE</span>
@@ -70,7 +70,7 @@ export function Hero() {
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-5 py-3.5 text-[var(--muted)] hover:text-white font-[var(--font-functional)] text-xs uppercase tracking-wider transition-colors"
+            className="inline-flex items-center gap-2 px-5 py-3.5 text-[var(--muted)] hover:text-[var(--fg)] font-[var(--font-functional)] text-xs uppercase tracking-wider transition-colors"
           >
             <span>GET IN TOUCH</span>
           </a>
@@ -80,7 +80,7 @@ export function Hero() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-8 border-t border-[var(--line)]">
           <div className="border border-[var(--line)] bg-[var(--surface)] p-4 sm:p-5 rounded-xs">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-[var(--font-heading)] text-2xl sm:text-3xl font-black text-white">v3.1.2</span>
+              <span className="font-[var(--font-heading)] text-2xl sm:text-3xl font-black text-[var(--fg)]">v3.1.2</span>
               <Cpu size={16} className="text-[var(--accent)]" />
             </div>
             <div className="font-[var(--font-functional)] text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">
@@ -93,20 +93,20 @@ export function Hero() {
 
           <div className="border border-[var(--line)] bg-[var(--surface)] p-4 sm:p-5 rounded-xs">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-[var(--font-heading)] text-2xl sm:text-3xl font-black text-white">23+</span>
+              <span className="font-[var(--font-heading)] text-2xl sm:text-3xl font-black text-[var(--fg)]">23+</span>
               <GithubIcon size={16} className="text-[var(--accent)]" />
             </div>
             <div className="font-[var(--font-functional)] text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">
               GitHub Repositories
             </div>
             <div className="font-[var(--font-reading)] text-[11px] text-[var(--muted-soft)] mt-1">
-              Fullstack, Desktop & Tools
+              Fullstack, Desktop &amp; Tools
             </div>
           </div>
 
           <div className="border border-[var(--line)] bg-[var(--surface)] p-4 sm:p-5 rounded-xs">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-[var(--font-heading)] text-2xl sm:text-3xl font-black text-white">TKJ + PTIK</span>
+              <span className="font-[var(--font-heading)] text-2xl sm:text-3xl font-black text-[var(--fg)]">TKJ + PTIK</span>
               <ShieldCheck size={16} className="text-[var(--accent)]" />
             </div>
             <div className="font-[var(--font-functional)] text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">
@@ -119,7 +119,7 @@ export function Hero() {
 
           <div className="border border-[var(--line)] bg-[var(--surface)] p-4 sm:p-5 rounded-xs">
             <div className="flex items-center justify-between mb-1">
-              <span className="font-[var(--font-heading)] text-2xl sm:text-3xl font-black text-white">2024-2028</span>
+              <span className="font-[var(--font-heading)] text-2xl sm:text-3xl font-black text-[var(--fg)]">2024-2028</span>
               <Terminal size={16} className="text-[var(--accent)]" />
             </div>
             <div className="font-[var(--font-functional)] text-xs font-semibold text-[var(--muted)] uppercase tracking-wider">

@@ -47,7 +47,7 @@ export function Projects() {
         {/* Section Headline */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+            <h2 className="font-[var(--font-heading)] text-2xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight text-[var(--fg)] leading-tight">
               ENGINEERED SOLUTIONS &amp; REPOSITORIES.
             </h2>
             <p className="font-[var(--font-reading)] text-base sm:text-lg text-[var(--muted)] max-w-2xl mt-3">
@@ -73,7 +73,7 @@ export function Projects() {
                 className={`px-3.5 py-1.5 rounded-xs text-xs font-[var(--font-functional)] font-semibold uppercase tracking-wider transition-all duration-150 ${
                   isActive
                     ? "bg-[var(--accent)] text-[var(--on-accent)] shadow-[0_0_12px_rgba(255,105,1,0.35)]"
-                    : "bg-[var(--surface)] text-[var(--muted)] hover:text-white border border-[var(--line)] hover:border-[var(--color-rail-mark)]"
+                    : "bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--fg)] border border-[var(--line)] hover:border-[var(--color-rail-mark)]"
                 }`}
               >
                 {cat.label}
