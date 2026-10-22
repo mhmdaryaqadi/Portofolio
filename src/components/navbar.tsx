@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { navItems, profileData } from "@/data/profile";
-import { Menu, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { MobileMenu } from "@/components/mobile-menu";
@@ -47,17 +47,18 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 left-0 w-full z-40 transition-all duration-200 ${
-          scrolled
+        className={`sticky top-0 left-0 w-full z-50 transition-all duration-200 ${
+          scrolled || isOpen
             ? "bg-[var(--nav-bg)] backdrop-blur-md border-b border-[var(--line)] shadow-md"
             : "bg-[var(--nav-bg)] backdrop-blur-sm border-b border-[var(--line)]"
         }`}
       >
         <div className="max-w-[var(--frame)] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          {/* Brand & Status Indicator */}
+          {/* Brand & Status Indicator (STRICTLY PRESERVED) */}
           <div className="flex items-center gap-4">
             <Link
               href="/"
+              onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 group text-[var(--fg)] font-[var(--font-heading)] font-black text-lg tracking-tight uppercase"
             >
               <div className="w-7 h-7 rounded-[2px] bg-[var(--surface-raised)] border border-[var(--line)] flex items-center justify-center group-hover:border-[var(--accent)] transition-colors duration-150">
@@ -80,8 +81,8 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Desktop Navigation Links with Guaranteed Smooth Scroll & Fast Scramble Effect */}
-          <nav className="hidden lg:flex items-center gap-6" aria-label="Main Navigation">
+          {/* Desktop Navigation Links with Live Scramble Effect */}
+          <nav className="hidden xl:flex items-center gap-6" aria-label="Main Navigation">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -94,7 +95,7 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Header Actions */}
+          {/* Header Actions: Theme Toggle, GitHub, CTA Button, and Hamburger Dropdown Toggle */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Segmented Theme Switcher (Light / Dark / System) */}
             <ThemeToggle />
@@ -111,10 +112,13 @@ export function Navbar() {
             </a>
 
             {/* Blackbox Signature Bracket CTA Button */}
-            <div className="hidden sm:block">
+            <div className="hidden md:block">
               <BracketButton
                 href="#contact"
-                onClick={(e) => handleSmoothScroll(e, "#contact")}
+                onClick={(e) => {
+                  setIsOpen(false);
+                  handleSmoothScroll(e, "#contact");
+                }}
                 variant="primary"
                 size="sm"
                 icon={<ArrowUpRight size={13} className="stroke-[2.5]" />}
@@ -123,26 +127,34 @@ export function Navbar() {
               </BracketButton>
             </div>
 
-            {/* Mobile Menu Toggle Button (Blackbox Tech Style with Corner Brackets) */}
+            {/* 
+              Signature Hamburger Menu Toggle Button (Blackbox Tech Style)
+              Header stays intact; clicking toggles fullscreen dropdown from right below navbar
+            */}
             <button
               type="button"
-              onClick={() => setIsOpen(true)}
-              aria-label="Open navigation menu"
-              className="lg:hidden relative group p-2 rounded-xs border border-[var(--line)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--fg)] hover:border-[var(--accent)] flex items-center justify-center transition-colors cursor-pointer"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Close menu dropdown" : "Open menu dropdown"}
+              className={`relative group p-2 rounded-xs border transition-all cursor-pointer ${
+                isOpen
+                  ? "border-[var(--accent)] bg-[var(--surface-raised)] text-[var(--accent)]"
+                  : "border-[var(--line)] bg-[var(--surface)] text-[var(--muted)] hover:text-[var(--fg)] hover:border-[var(--accent)]"
+              }`}
             >
-              {/* Mini Corner Brackets */}
+              {/* Mini Corner Brackets on Hover */}
               <span className="absolute -top-1 -left-1 w-1.5 h-1.5 border-t border-l border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
               <span className="absolute -top-1 -right-1 w-1.5 h-1.5 border-t border-r border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
               <span className="absolute -bottom-1 -left-1 w-1.5 h-1.5 border-b border-l border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
               <span className="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b border-r border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
 
-              <Menu size={18} />
+              {isOpen ? <X size={18} className="stroke-[2.5]" /> : <Menu size={18} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Full-Screen Blackbox Tech Overlay for Mobile with Slide-Down Animation */}
+      {/* Full-Screen Mega Menu Dropdown flowing down from right below navbar */}
       <MobileMenu isOpen={isOpen} onClose={() => setIsOpen(false)} />
     </>
   );

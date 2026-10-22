@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ScrambleText } from "@/components/scramble-text";
 
-interface MobileMenuProps {
+interface MegaMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
+export function MobileMenu({ isOpen, onClose }: MegaMenuProps) {
   const [isRendered, setIsRendered] = useState(false);
   const [animateIn, setAnimateIn] = useState(false);
 
@@ -23,15 +23,17 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     if (isOpen) {
       t1 = setTimeout(() => {
         setIsRendered(true);
+      }, 0);
+      t2 = setTimeout(() => {
         setAnimateIn(true);
-      }, 10);
+      }, 15);
     } else {
       t2 = setTimeout(() => {
         setAnimateIn(false);
       }, 0);
       t3 = setTimeout(() => {
         setIsRendered(false);
-      }, 280);
+      }, 300);
     }
 
     return () => {
@@ -70,14 +72,15 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Navigation Menu"
-      className={`fixed inset-0 z-[100] w-full h-[100dvh] bg-[var(--bg)]/98 backdrop-blur-2xl flex flex-col justify-between overflow-y-auto overscroll-contain transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+      aria-label="Fullscreen Navigation Menu"
+      className={`fixed top-16 left-0 right-0 bottom-0 z-40 bg-[var(--bg)]/98 backdrop-blur-2xl border-b border-[var(--line)] flex flex-col justify-between overflow-y-auto overscroll-contain transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_30px_60px_rgba(0,0,0,0.25)] ${
         animateIn
           ? "translate-y-0 opacity-100 pointer-events-auto"
           : "-translate-y-full opacity-0 pointer-events-none"
       }`}
+      style={{ height: "calc(100dvh - 64px)" }}
     >
-      {/* Background Decorative Radar Spin & Hazard Stripes */}
+      {/* Background Decorative Radar Spin & Hazard Pattern */}
       <div
         className="pointer-events-none absolute -top-12 -right-12 w-80 h-80 opacity-20 select-none"
         aria-hidden="true"
@@ -96,40 +99,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         </svg>
       </div>
 
-      {/* Top Header Bar */}
-      <div className="max-w-[var(--frame)] w-full mx-auto px-4 sm:px-6 h-16 flex items-center justify-between border-b border-[var(--line)] relative z-10 flex-shrink-0">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-[2px] bg-[var(--surface-raised)] border border-[var(--line)] flex items-center justify-center">
-            <span className="text-[var(--accent)] text-xs font-mono font-bold">&gt;_</span>
-          </div>
-          <span className="font-[var(--font-heading)] font-black text-lg tracking-tight uppercase text-[var(--fg)]">
-            ARYA<span className="text-[var(--accent)]">.DEV</span>
-          </span>
-          <span className="text-[10px] font-mono text-[var(--muted)] ml-2">
-            {"// MENU_OVERLAY"}
-          </span>
-        </div>
-
-        {/* Close Button with Corner Brackets */}
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close menu"
-          className="relative group px-3.5 py-1.5 bg-[var(--surface)] border border-[var(--line)] text-[var(--fg)] rounded-xs flex items-center gap-2 text-xs font-[var(--font-functional)] font-bold tracking-wider hover:border-[var(--accent)] transition-all cursor-pointer"
-        >
-          {/* Corner Siku: appear on hover */}
-          <span className="absolute -top-1 -left-1 w-1.5 h-1.5 border-t-2 border-l-2 border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
-          <span className="absolute -top-1 -right-1 w-1.5 h-1.5 border-t-2 border-r-2 border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
-          <span className="absolute -bottom-1 -left-1 w-1.5 h-1.5 border-b-2 border-l-2 border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
-          <span className="absolute -bottom-1 -right-1 w-1.5 h-1.5 border-b-2 border-r-2 border-[var(--accent)] opacity-0 group-hover:opacity-100 transition-opacity" />
-
-          <ScrambleText text="CLOSE" durationMs={120} />
-          <X size={14} className="text-[var(--accent)]" />
-        </button>
-      </div>
-
       {/* Main 3-Column Structural Nav Content with Staggered Entrance Animation */}
-      <div className="max-w-[var(--frame)] w-full mx-auto px-4 sm:px-6 py-8 sm:py-12 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 relative z-10">
+      <div className="max-w-[var(--frame)] w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 relative z-10 flex-1">
         {/* Column 1: PLATFORM & ARCHITECTURE */}
         <div
           className={`space-y-4 transition-all duration-300 ease-out ${
@@ -150,7 +121,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <a
                 href="#about"
                 onClick={(e) => handleSmoothScroll(e, "about")}
-                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group"
+                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer"
               >
                 <ScrambleText text="About Developer" durationMs={140} />
               </a>
@@ -163,7 +134,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <a
                 href="#skills"
                 onClick={(e) => handleSmoothScroll(e, "skills")}
-                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group"
+                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer"
               >
                 <ScrambleText text="Skills Matrix" durationMs={140} />
               </a>
@@ -176,7 +147,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <a
                 href="#flagship"
                 onClick={(e) => handleSmoothScroll(e, "flagship")}
-                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--accent)] hover:underline transition-all block group"
+                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--accent)] hover:underline transition-all block group cursor-pointer"
               >
                 <ScrambleText text="GameZone v3.1.2" durationMs={140} />
               </a>
@@ -204,7 +175,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <a
                 href="#projects"
                 onClick={(e) => handleSmoothScroll(e, "projects")}
-                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group"
+                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer"
               >
                 <ScrambleText text="Projects Catalog" durationMs={140} />
               </a>
@@ -217,7 +188,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <a
                 href="#experience"
                 onClick={(e) => handleSmoothScroll(e, "experience")}
-                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group"
+                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer"
               >
                 <ScrambleText text="Career Experience" durationMs={140} />
               </a>
@@ -230,7 +201,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               <a
                 href="#contact"
                 onClick={(e) => handleSmoothScroll(e, "contact")}
-                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group"
+                className="font-[var(--font-heading)] text-2xl font-black uppercase text-[var(--fg)] hover:text-[var(--accent)] transition-colors block group cursor-pointer"
               >
                 <ScrambleText text="Contact & Dispatch" durationMs={140} />
               </a>
@@ -259,7 +230,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               href="https://wa.me/628987316516"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-2.5 bg-[var(--surface)] border border-[var(--line)] rounded-xs hover:border-[var(--accent)] transition-colors group"
+              className="flex items-center justify-between p-2.5 bg-[var(--surface)] border border-[var(--line)] rounded-xs hover:border-[var(--accent)] transition-colors group cursor-pointer"
             >
               <div className="flex items-center gap-2">
                 <WhatsappIcon size={14} className="text-emerald-400" />
@@ -274,7 +245,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               href="https://linkedin.com/in/muhammad-arya-alqadi-47939a387/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-2.5 bg-[var(--surface)] border border-[var(--line)] rounded-xs hover:border-[var(--accent)] transition-colors group"
+              className="flex items-center justify-between p-2.5 bg-[var(--surface)] border border-[var(--line)] rounded-xs hover:border-[var(--accent)] transition-colors group cursor-pointer"
             >
               <div className="flex items-center gap-2">
                 <LinkedinIcon size={14} className="text-cyan-400" />
@@ -289,7 +260,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               href="https://github.com/mhmdaryaqadi"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-2.5 bg-[var(--surface)] border border-[var(--line)] rounded-xs hover:border-[var(--accent)] transition-colors group"
+              className="flex items-center justify-between p-2.5 bg-[var(--surface)] border border-[var(--line)] rounded-xs hover:border-[var(--accent)] transition-colors group cursor-pointer"
             >
               <div className="flex items-center gap-2">
                 <GithubIcon size={14} />
@@ -311,13 +282,13 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         </div>
       </div>
 
-      {/* Bottom Footer Bar Inside Overlay */}
-      <div className="max-w-[var(--frame)] w-full mx-auto px-4 sm:px-6 py-4 border-t border-[var(--line)] flex flex-wrap items-center justify-between text-xs text-[var(--muted)] font-[var(--font-functional)] relative z-10 flex-shrink-0">
+      {/* Bottom Footer Bar Inside Dropdown */}
+      <div className="max-w-[var(--frame)] w-full mx-auto px-4 sm:px-6 lg:px-8 py-4 border-t border-[var(--line)] flex flex-wrap items-center justify-between text-xs text-[var(--muted)] font-[var(--font-functional)] relative z-10 flex-shrink-0">
         <div>
           Muhammad Arya Alqadi © {new Date().getFullYear()}
         </div>
         <div className="font-mono text-[11px] text-[var(--accent)]">
-          SYSTEM_STATUS: READY
+          SYSTEM_STATUS: ACTIVE // IPC_CONNECTED
         </div>
       </div>
     </div>
