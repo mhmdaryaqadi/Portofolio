@@ -150,6 +150,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
   transition: background-color 200ms ease, color 200ms ease;
 }
 
@@ -157,6 +158,7 @@ body {
   font-family: var(--font-reading);
   background-color: var(--bg-alt);
   color: var(--ink);
+  overflow-x: hidden;
   transition: background-color 200ms ease, color 200ms ease;
 }
 
@@ -170,7 +172,7 @@ body {
     transparent 2px,
     transparent 12px
   );
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 ::selection {
