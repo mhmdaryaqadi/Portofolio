@@ -26,14 +26,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative rounded-xs border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-all duration-200 hover:border-[var(--color-rail-mark)] group"
+      className="relative rounded-xs border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-7 flex flex-col justify-between overflow-hidden transition-all duration-200 hover:border-[var(--accent)] hover:-translate-y-1 group shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
     >
       {/* Dynamic Cursor Spotlight Radial Glow */}
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{
           background: isHovered
-            ? `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 105, 1, 0.08), transparent 70%)`
+            ? `radial-gradient(450px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 105, 1, 0.12), transparent 75%)`
             : "none",
         }}
       />
@@ -57,7 +57,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <span>{project.title}</span>
           <ArrowUpRight
             size={18}
-            className="text-[var(--muted-soft)] group-hover:text-[var(--accent)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+            className="text-[var(--muted-soft)] group-hover:text-[var(--accent)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
           />
         </h3>
 
@@ -85,7 +85,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.techStack.map((tech, idx) => (
             <span
               key={idx}
-              className="px-2 py-0.5 bg-[var(--bg)] border border-[var(--line)] rounded-xs text-[11px] font-[var(--font-functional)] text-[var(--muted)]"
+              className="px-2 py-0.5 bg-[var(--bg)] border border-[var(--line)] rounded-xs text-[11px] font-[var(--font-functional)] text-[var(--muted)] group-hover:border-[var(--color-rail-mark)] transition-colors"
             >
               {tech}
             </span>
